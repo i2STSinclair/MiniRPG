@@ -1,16 +1,16 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Create Player.cs inside Models folder.
+Modify BattleViewModel.cs to use Player model.
 
 Requirements:
-• Properties:
-   - Name (string)
-   - HP (int)
-   - MaxHP (int)
-   - Attack (int)
-   - Defense (int)
-• Constructor sets defaults (HP = 30, Attack = 5, Defense = 2)
-• Add TODO: // Future - include inventory, experience, and leveling system
+• Add property Player of type Player.
+• In constructor, initialize Player = new Player().
+• Replace PlayerHP references with Player.HP.
+• When damage taken:
+   - Subtract from Player.HP
+   - If Player.HP <= 0, append "You were defeated!"
+• Bind ProgressBar in BattleView.xaml to Player.HP and set Maximum to Player.MaxHP.
+• Add TODO: // Later - persist Player object between battles
 
 ---
 

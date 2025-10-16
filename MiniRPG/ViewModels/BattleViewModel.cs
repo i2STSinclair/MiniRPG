@@ -2,6 +2,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using MiniRPG.Services;
+using MiniRPG.Models;
 
 namespace MiniRPG.ViewModels
 {
@@ -13,12 +14,7 @@ namespace MiniRPG.ViewModels
         public ObservableCollection<string> CombatLog { get; } = new();
         private ObservableCollection<string> _globalLog;
 
-        private int _playerHP = 30;
-        public int PlayerHP
-        {
-            get => _playerHP;
-            set { _playerHP = value; OnPropertyChanged(); }
-        }
+        public Player Player { get; set; }
 
         private int _enemyHP = 20;
         public int EnemyHP
@@ -49,12 +45,13 @@ namespace MiniRPG.ViewModels
         public ICommand RunCommand { get; }
 
         // Later: Replace integers with full Stat objects for scaling difficulty
+        // TODO: Later - persist Player object between battles
 
         public BattleViewModel(ObservableCollection<string> globalLog)
         {
             _globalLog = globalLog;
+            Player = new Player();
             CurrentEnemy = GameService.GetRandomEnemy();
-            PlayerHP = 30;
             EnemyHP = 20;
             IsBattleOver = false;
             AttackCommand = new RelayCommand(_ => Attack(), _ => _canAct && !IsBattleOver);
@@ -110,11 +107,11 @@ namespace MiniRPG.ViewModels
                 dmg /= 2;
                 _defendNext = false;
             }
-            PlayerHP -= dmg;
-            var msg = $"{CurrentEnemy} attacks you for {dmg} damage! (Your HP: {PlayerHP})";
+            Player.HP -= dmg;
+            var msg = $"{CurrentEnemy} attacks you for {dmg} damage! (Your HP: {Player.HP})";
             CombatLog.Add(msg);
             _globalLog.Add(msg);
-            if (PlayerHP <= 0)
+            if (Player.HP <= 0)
             {
                 CombatLog.Add("You were defeated!");
                 _globalLog.Add("You were defeated!");

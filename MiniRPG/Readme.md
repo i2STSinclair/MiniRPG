@@ -174,4 +174,14 @@
   - Constructor sets defaults (HP = 30, Attack = 5, Defense = 2).
   - TODO for future inventory, experience, and leveling system.
 
+---
+
+## BattleViewModel Uses Player Model
+
+- Added Player property to BattleViewModel, initialized in constructor.
+- Replaced PlayerHP references with Player.HP and Player.MaxHP.
+- Updated damage logic to subtract from Player.HP and check for defeat.
+- Bound PlayerHPBar in BattleView.xaml to Player.HP and Maximum to Player.MaxHP.
+- Added TODO for persisting Player object between battles.
+
 This line is kept as requested.

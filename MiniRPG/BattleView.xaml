@@ -22,7 +22,7 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
                 <StackPanel Margin="0,0,20,0">
                     <TextBlock Text="Player HP" FontWeight="Bold" HorizontalAlignment="Center" />
-                    <ProgressBar Name="PlayerHPBar" Value="{Binding PlayerHP}" Maximum="30" Height="18" Width="120" />
+                    <ProgressBar Name="PlayerHPBar" Value="{Binding Player.HP}" Maximum="{Binding Player.MaxHP}" Height="18" Width="120" />
                 </StackPanel>
                 <StackPanel>
                     <TextBlock Text="Enemy HP" FontWeight="Bold" HorizontalAlignment="Center" />
