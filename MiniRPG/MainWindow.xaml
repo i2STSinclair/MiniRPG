@@ -1,0 +1,41 @@
+﻿<Window x:Class="MiniRPG.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiniRPG"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" /> <!-- Top MenuBar -->
+            <RowDefinition Height="*" />    <!-- Main Content -->
+            <RowDefinition Height="100" />  <!-- Bottom Log -->
+        </Grid.RowDefinitions>
+
+        <!-- Top MenuBar -->
+        <Menu Grid.Row="0" Name="MainMenuBar">
+            <MenuItem Header="Map" Name="MapMenuButton" />
+            <MenuItem Header="Battle" Name="BattleMenuButton" />
+            <!-- Art assets for menu icons can be inserted here -->
+        </Menu>
+
+        <!-- Main ContentControl -->
+        <ContentControl Grid.Row="1" Name="MainContentControl">
+            <!-- This will switch between MapView and BattleView -->
+            <!-- Art assets for map or battle backgrounds can be inserted here -->
+        </ContentControl>
+
+        <!-- Bottom TextBox for logs/messages -->
+        <TextBox Grid.Row="2" Name="CombatLogTextBox"
+                 IsReadOnly="True"
+                 AcceptsReturn="True"
+                 VerticalScrollBarVisibility="Auto"
+                 TextWrapping="Wrap"
+                 FontFamily="Consolas"
+                 FontSize="14"
+                 Background="#FF1E1E1E" Foreground="White">
+            <!-- Art assets for log background can be inserted here -->
+        </TextBox>
+    </Grid>
+</Window>
