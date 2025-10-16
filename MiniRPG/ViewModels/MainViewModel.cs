@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows.Input;
 using System.Threading.Tasks;
 using MiniRPG.Models;
+using MiniRPG.Services;
 
 namespace MiniRPG.ViewModels
 {
@@ -28,15 +29,19 @@ namespace MiniRPG.ViewModels
 
         public ObservableCollection<string> GlobalLog { get; } = new();
 
-        public Player CurrentPlayer { get; set; } = new Player();
+        public Player CurrentPlayer { get; set; }
 
         public ICommand ShowMapCommand { get; }
         public ICommand ShowBattleCommand { get; }
+        public ICommand SaveCommand { get; }
 
         public MainViewModel()
         {
+            var loadedPlayer = SaveLoadService.LoadPlayer();
+            CurrentPlayer = loadedPlayer ?? new Player();
             ShowMapCommand = new RelayCommand(_ => ShowMap());
             ShowBattleCommand = new RelayCommand(_ => ShowBattle());
+            SaveCommand = new RelayCommand(_ => SaveLoadService.SavePlayer(CurrentPlayer));
             ShowMap(); // Default view
         }
 
@@ -88,5 +93,6 @@ namespace MiniRPG.ViewModels
             // Future: Insert transition/animation logic here for BattleView
         }
         // TODO: Later - add save/load player data to file system
+        // TODO: Later - trigger auto-save after each battle or major event
     }
 }

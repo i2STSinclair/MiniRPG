@@ -1,16 +1,16 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Create SaveLoadService.cs in the Services folder.
+Edit MainViewModel.cs.
 
 Requirements:
-• Use System.Text.Json
-• Implement two static methods:
-   - SavePlayer(Player player, string filePath = "player_save.json")
-   - LoadPlayer(string filePath = "player_save.json") → returns Player or null
-• SavePlayer serializes Player object to JSON and writes it to file.
-• LoadPlayer reads file if it exists, deserializes JSON to Player, and returns it.
-• Add proper exception handling (try/catch with Debug.WriteLine).
-• Add TODO: // Extend to save inventory, map progress, and settings later
+• On construction:
+   - Attempt to load existing player via SaveLoadService.LoadPlayer().
+   - If null, create a new Player.
+   - Assign to CurrentPlayer.
+• Add SaveCommand using RelayCommand.
+• When SaveCommand executes, call SaveLoadService.SavePlayer(CurrentPlayer).
+• Add TODO: // Later - trigger auto-save after each battle or major event
+
 
 ---
 

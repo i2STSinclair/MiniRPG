@@ -335,3 +335,12 @@
   - SavePlayer serializes Player to JSON and writes to file.
   - LoadPlayer reads file and deserializes Player from JSON.
   - Includes exception handling and TODO for saving inventory, map progress, and settings.
+
+---
+
+## MainViewModel Save/Load Integration
+
+- On construction, attempts to load existing player via SaveLoadService.LoadPlayer().
+- If no save exists, creates a new Player.
+- Adds SaveCommand using RelayCommand to save player data.
+- TODO for auto-save after each battle or major event.
