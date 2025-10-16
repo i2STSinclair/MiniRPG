@@ -394,3 +394,12 @@
   - <!-- TODO: Encrypt save file -->
   - <!-- TODO: Add multiple save slots -->
   - <!-- TODO: Add "Continue" option on main menu -->
+
+---
+
+## TitleView UserControl Added
+
+- Created TitleView.xaml and TitleView.xaml.cs.
+- XAML layout: large centered title text ("Simple RPG") and two large buttons ("New Game" and "Continue") bound to NewGameCommand and ContinueCommand.
+- All elements centered in a Grid.
+- Added TODO comments for logo art, background music, intro scene, and button animation.
