@@ -149,4 +149,12 @@
   - Enemy sprite
   - Location art
 
+---
+
+## BattleView HP Bars and Art TODOs
+
+- Added Player HP and Enemy HP ProgressBars to BattleView, bound to PlayerHP and EnemyHP, with Maximums matching ViewModel defaults.
+- Kept Attack/Defend/Run buttons and CombatLog box.
+- Added TODO comments for animated health bars, pixel-art overlays, and player/enemy portraits.
+
 This line is kept as requested.

@@ -5,6 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="400">
+    <!-- TODO: Replace ProgressBars with animated health bars or custom pixel-art overlay -->
+    <!-- TODO: Insert Player/Enemy portraits here -->
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -15,13 +17,22 @@
         <!-- Top: Battle status -->
         <TextBlock Grid.Row="0" Name="BattleStatusText" Text="Battle in Progress" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,10" />
 
-        <!-- Center: Action buttons and sprites -->
-        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,10">
-            <!-- TODO: Player sprite -->
+        <!-- HP Bars and Portraits -->
+        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+                <StackPanel Margin="0,0,20,0">
+                    <TextBlock Text="Player HP" FontWeight="Bold" HorizontalAlignment="Center" />
+                    <ProgressBar Name="PlayerHPBar" Value="{Binding PlayerHP}" Maximum="30" Height="18" Width="120" />
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="Enemy HP" FontWeight="Bold" HorizontalAlignment="Center" />
+                    <ProgressBar Name="EnemyHPBar" Value="{Binding EnemyHP}" Maximum="20" Height="18" Width="120" />
+                </StackPanel>
+            </StackPanel>
+            <!-- TODO: Insert Player/Enemy portraits here -->
             <Button Name="AttackButton" Content="Attack" Command="{Binding AttackCommand}" Width="120" Margin="0,5" />
             <Button Name="DefendButton" Content="Defend" Command="{Binding DefendCommand}" Width="120" Margin="0,5" />
             <Button Name="RunButton" Content="Run" Command="{Binding RunCommand}" Width="120" Margin="0,5" />
-            <!-- TODO: Enemy sprite -->
         </StackPanel>
 
         <!-- Bottom: Combat log -->

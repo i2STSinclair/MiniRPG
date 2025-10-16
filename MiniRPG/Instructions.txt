@@ -1,27 +1,16 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Modify BattleViewModel.cs.
+Update MapViewModel and MainViewModel.
 
 Requirements:
-• Add integer properties:
-   - PlayerHP (default 30)
-   - EnemyHP (default 20)
-   - CurrentEnemy (string)
-• Add bool IsBattleOver
-• Update AttackCommand:
-   1. int dmg = GameService.CalculateDamage();
-   2. EnemyHP -= dmg;
-   3. Append $"You strike {CurrentEnemy} for {dmg} damage! (Enemy HP: {EnemyHP})"
-   4. If EnemyHP <= 0 => Append "You defeated the enemy!" and set IsBattleOver = true.
-   5. Else call EnemyAttack().
-• Create private method EnemyAttack():
-   - int dmg = GameService.CalculateDamage() / 2;
-   - PlayerHP -= dmg;
-   - Append $"{CurrentEnemy} attacks you for {dmg} damage! (Your HP: {PlayerHP})"
-   - If PlayerHP <= 0 => Append "You were defeated!" and set IsBattleOver = true.
-• DefendCommand reduces next incoming damage by 50%.
-• RunCommand ends battle and appends "You escaped safely."
-• Add TODO comment: // Later: Replace integers with full Stat objects for scaling difficulty
+• In MapViewModel, modify StartBattleCommand to raise an event or callback when executed, e.g. OnStartBattle(string location).
+• In MainViewModel, subscribe to that event.
+• When triggered:
+   - Create a new BattleViewModel()
+   - Optionally pass the selected location name or seed to it
+   - Set CurrentViewModel = that BattleViewModel
+   - AddLog($"Entering battle at {location}")
+• Add TODO: // Later - fade transition and music change between map and battle
 
 
 ---
