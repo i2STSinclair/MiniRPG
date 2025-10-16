@@ -234,4 +234,12 @@
 - Implements IValueConverter to convert true → Visibility.Visible, false → Visibility.Collapsed.
 - Includes TODO for future game state UI converters.
 
+---
+
+## BooleanToVisibilityConverter in App.xaml & BattleView.xaml
+
+- Added BooleanToVisibilityConverter to App.xaml resources and defined xmlns:converters.
+- Updated BattleView.xaml to use BoolToVis for overlay/button visibility and added xmlns:converters.
+- Added TODO for future state-based ViewModel system.
+
 This line is kept as requested.

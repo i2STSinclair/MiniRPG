@@ -4,8 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:MiniRPG"
+             xmlns:converters="clr-namespace:MiniRPG.Converters"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="400">
+    <!-- TODO: Transition this logic to state-based ViewModel system later -->
     <!-- TODO: Add background art per location -->
     <!-- TODO: Add music/audio triggers when battle starts -->
     <!-- TODO: Replace ProgressBars with animated health bars or custom pixel-art overlay -->
