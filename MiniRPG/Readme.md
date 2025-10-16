@@ -17,4 +17,17 @@
 - Implements INotifyPropertyChanged and provides a protected OnPropertyChanged(string propertyName) method.
 - Follows standard MVVM pattern for property change notification.
 
+---
+
+## MainViewModel and Supporting Classes Added
+
+- Created MainViewModel.cs in the ViewModels folder.
+  - Inherits from BaseViewModel.
+  - Adds CurrentViewModel property (BaseViewModel).
+  - Adds ShowMapCommand and ShowBattleCommand properties using RelayCommand.
+  - Commands switch CurrentViewModel between new MapViewModel() and new BattleViewModel().
+  - Comments added for future transitions/animations.
+- Implemented RelayCommand in ViewModels folder for MVVM command binding.
+- Added placeholder MapViewModel and BattleViewModel classes inheriting from BaseViewModel.
+
 This line is kept as requested.
