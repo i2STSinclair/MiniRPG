@@ -2,6 +2,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows.Input;
+using MiniRPG.Models;
 
 namespace MiniRPG.ViewModels
 {
@@ -27,12 +28,15 @@ namespace MiniRPG.ViewModels
         public ICommand StartBattleCommand { get; }
         private ObservableCollection<string> _globalLog;
 
+        public Player Player { get; }
+
         // Event/callback for starting battle
         public event Action<string>? OnStartBattle;
 
-        public MapViewModel(ObservableCollection<string> globalLog)
+        public MapViewModel(ObservableCollection<string> globalLog, Player player)
         {
             _globalLog = globalLog;
+            Player = player;
             Locations = new ObservableCollection<string>
             {
                 "Forest",

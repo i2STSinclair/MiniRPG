@@ -281,3 +281,13 @@
 - When creating BattleViewModel, passes the same Player instance for persistent stats and HP.
 - BattleViewModel constructor updated to accept and assign Player.
 - TODO added for save/load player data to file system.
+
+---
+
+## MapView Player Info Display
+
+- MapView.xaml now displays player info at the top:
+  - Level, HP/MaxHP, EXP/ExperienceToNextLevel (bound to Player in MapViewModel).
+- MapViewModel accepts Player in constructor and exposes it for binding.
+- MainViewModel passes CurrentPlayer to MapViewModel.
+- Added TODO comments for pixel-art status window and animated portrait/player sprite.

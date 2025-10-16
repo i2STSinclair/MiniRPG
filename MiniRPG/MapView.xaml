@@ -5,6 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="400">
+    <!-- TODO: Replace text with pixel-art status window -->
+    <!-- TODO: Add animated portrait or player sprite here -->
     <!-- TODO: Insert background map image here -->
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -13,10 +15,24 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Content="Choose a Battle Location" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White" />
+        <!-- Player Info Panel -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+            <TextBlock Text="Level: " FontWeight="Bold" Foreground="White" />
+            <TextBlock Text="{Binding Player.Level}" Foreground="White" Margin="4,0,12,0" />
+            <TextBlock Text="HP: " FontWeight="Bold" Foreground="White" />
+            <TextBlock Text="{Binding Player.HP}" Foreground="White" />
+            <TextBlock Text="/" Foreground="White" />
+            <TextBlock Text="{Binding Player.MaxHP}" Foreground="White" Margin="4,0,12,0" />
+            <TextBlock Text="EXP: " FontWeight="Bold" Foreground="White" />
+            <TextBlock Text="{Binding Player.Experience}" Foreground="White" />
+            <TextBlock Text="/" Foreground="White" />
+            <TextBlock Text="{Binding Player.ExperienceToNextLevel}" Foreground="White" />
+        </StackPanel>
 
-        <ListBox Grid.Row="1" Name="LocationList" ItemsSource="{Binding Locations}" Margin="0,0,0,10" />
+        <Label Grid.Row="1" Content="Choose a Battle Location" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White" />
 
-        <Button Grid.Row="2" Content="Fight!" Command="{Binding StartBattleCommand}" HorizontalAlignment="Right" Width="100" Foreground="White" Background="#444466" />
+        <ListBox Grid.Row="2" Name="LocationList" ItemsSource="{Binding Locations}" Margin="0,0,0,10" />
+
+        <Button Grid.Row="3" Content="Fight!" Command="{Binding StartBattleCommand}" HorizontalAlignment="Right" Width="100" Foreground="White" Background="#444466" />
     </Grid>
 </UserControl>

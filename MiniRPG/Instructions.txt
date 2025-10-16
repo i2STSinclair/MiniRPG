@@ -1,14 +1,16 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Update MainViewModel.cs.
+Edit MapView.xaml.
 
 Requirements:
-• Add a public property: Player CurrentPlayer { get; set; } = new Player();
-• When creating BattleViewModel, pass the same Player instance:
-   var battleVM = new BattleViewModel(CurrentPlayer);
-• In BattleViewModel, modify constructor to accept a Player parameter and assign it.
-• Ensure Player HP and stats carry over between battles.
-• Add TODO: // Later - add save/load player data to file system
+• Add a StackPanel at the top displaying player info:
+   - "Level: {Binding Player.Level}"
+   - "HP: {Binding Player.HP}/{Binding Player.MaxHP}"
+   - "EXP: {Binding Player.Experience}/{Binding Player.ExperienceToNextLevel}"
+• Bind Player through DataContext of MapViewModel (accept Player as constructor argument).
+• Include TODO comments:
+   <!-- TODO: Replace text with pixel-art status window -->
+   <!-- TODO: Add animated portrait or player sprite here -->
 
 ---
 
