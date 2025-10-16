@@ -1,4 +1,7 @@
-﻿<!-- TODO: Add save system -->
+﻿<!-- TODO: Replace entire layout with pixel-art themed UI -->
+<!-- TODO: Add main menu and title screen before MapView -->
+<!-- TODO: Hook into background music manager -->
+<!-- TODO: Add save system -->
 <!-- TODO: Add inventory and level-up after victory -->
 <!-- TODO: Add background music, player sprite, enemy sprite, and location art -->
 <!-- TODO: Add background art per location -->
@@ -28,7 +31,7 @@
         </DataTemplate>
         <!-- TODO: Add fade transitions between views here -->
     </Window.Resources>
-    <Grid Background="#222233">
+    <Grid Background="#222233" Margin="12">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" /> <!-- Top MenuBar -->
             <RowDefinition Height="*" />    <!-- Main Content -->
@@ -36,24 +39,27 @@
         </Grid.RowDefinitions>
 
         <!-- Top MenuBar -->
-        <Menu Grid.Row="0" Name="MainMenuBar" Foreground="White">
+        <Menu Grid.Row="0" Name="MainMenuBar" Foreground="White" Margin="0,0,0,8">
             <MenuItem Header="Map" Name="MapMenuButton" />
             <MenuItem Header="Battle" Name="BattleMenuButton" />
             <!-- Art assets for menu icons can be inserted here -->
         </Menu>
 
-        <!-- Main ContentControl -->
-        <ContentControl Grid.Row="1" Name="MainContentControl" Content="{Binding CurrentViewModel}" Foreground="White" />
+        <!-- Main ContentControl with Card-style Border -->
+        <Border Grid.Row="1" Margin="0,0,0,8" Background="#292944" BorderBrush="#444466" BorderThickness="2" CornerRadius="12">
+            <ContentControl Name="MainContentControl" Content="{Binding CurrentViewModel}" Foreground="White" Margin="16" />
+        </Border>
 
-        <!-- Bottom Log ListBox with Border -->
-        <Border Grid.Row="2" Margin="8" BorderBrush="#444466" BorderThickness="2" CornerRadius="6">
+        <!-- Bottom Log ListBox with Card-style Border and darker background -->
+        <Border Grid.Row="2" Margin="0,0,0,0" BorderBrush="#444466" BorderThickness="2" CornerRadius="12" Background="#181820">
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                 <ListBox Name="GlobalLogListBox"
                          ItemsSource="{Binding GlobalLog}"
                          FontFamily="Consolas"
                          FontSize="14"
-                         Background="#1E1E2A" Foreground="White"
-                         IsHitTestVisible="False">
+                         Background="#181820" Foreground="White"
+                         IsHitTestVisible="False"
+                         Margin="8">
                     <!-- TODO: Style log box with pixel-art frame -->
                 </ListBox>
             </ScrollViewer>

@@ -1,19 +1,15 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Enhance MapViewModel and MapView.xaml.
+Enhance MainWindow.xaml.
 
-MapViewModel.cs:
-• Add RelayCommand named RestCommand
-• When executed:
-   - Player.HP = Player.MaxHP
-   - Notify property changed
-   - Append "You rest and recover all HP." to global log if available
-
-MapView.xaml:
-• Add a Button labeled "Rest"
-• Bind to RestCommand
-• Place it under player info section
-• Add TODO: // Replace with inn scene and cost-based healing later
+Requirements:
+• Add a Border or Card-style background behind the main ContentControl.
+• Use darker background for the log TextBox area.
+• Add corner padding and subtle spacing.
+• Add placeholder comments:
+   <!-- TODO: Replace entire layout with pixel-art themed UI -->
+   <!-- TODO: Add main menu and title screen before MapView -->
+   <!-- TODO: Hook into background music manager -->
 
 ---
 

@@ -308,3 +308,11 @@
   - Sets Player.HP to Player.MaxHP, notifies property changed, and logs recovery.
 - MapView.xaml adds a "Rest" button under player info, bound to RestCommand.
 - Added TODO for future inn scene and cost-based healing.
+
+---
+
+## MainWindow Card-Style Layout & TODOs
+
+- Added card-style Border behind main ContentControl with proper margin and spacing.
+- Used darker background for log area and added margin for spacing.
+- Added placeholder TODO comments for pixel-art UI, main menu/title screen, and background music manager.
