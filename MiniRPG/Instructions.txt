@@ -1,13 +1,13 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Modify MainViewModel.cs.
+Update TitleView.xaml.
 
 Requirements:
-• When showing TitleViewModel, call AudioService.PlayTitleTheme()
-• When switching to MapViewModel, call AudioService.PlayMapTheme()
-• When switching to BattleViewModel, call AudioService.PlayBattleTheme()
-• Use try/catch to prevent exceptions if audio files missing.
-• Add TODO: // Replace with smooth fade transitions between tracks
+• Add KeyBindings:
+   - Enter → triggers NewGameCommand
+   - C → triggers ContinueCommand
+• Add ToolTips to buttons showing these shortcuts.
+• Add TODO: // Add keyboard navigation and controller input later.
 
 ---
 

@@ -451,3 +451,13 @@
 - Calls AudioService.PlayBattleTheme() when switching to BattleViewModel.
 - Uses try/catch to prevent exceptions if audio files are missing.
 - TODO for smooth fade transitions between tracks.
+
+---
+
+## TitleView Keyboard Shortcuts & ToolTips
+
+- Added KeyBindings to TitleView:
+  - Enter triggers NewGameCommand
+  - C triggers ContinueCommand
+- Added ToolTips to buttons showing shortcuts.
+- Added TODO for keyboard navigation and controller input.

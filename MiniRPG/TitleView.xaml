@@ -7,6 +7,10 @@
              d:DesignHeight="400" d:DesignWidth="600">
     <!-- TODO: Replace title with logo art -->
     <!-- TODO: Add background music and pixel-art intro scene -->
+    <UserControl.InputBindings>
+        <KeyBinding Key="Enter" Command="{Binding NewGameCommand}" />
+        <KeyBinding Key="C" Command="{Binding ContinueCommand}" />
+    </UserControl.InputBindings>
     <Grid Background="#222233">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -16,12 +20,15 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="1" Text="Simple RPG" FontSize="48" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,32" />
         <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
-            <Button Content="New Game" Command="{Binding NewGameCommand}" Width="220" Height="56" FontSize="22" Margin="0,0,0,16">
+            <Button Content="New Game" Command="{Binding NewGameCommand}" Width="220" Height="56" FontSize="22" Margin="0,0,0,16"
+                    ToolTip="Enter: New Game">
                 <!-- TODO: Animate buttons on hover -->
             </Button>
-            <Button Content="Continue" Command="{Binding ContinueCommand}" Width="220" Height="56" FontSize="22">
+            <Button Content="Continue" Command="{Binding ContinueCommand}" Width="220" Height="56" FontSize="22"
+                    ToolTip="C: Continue">
                 <!-- TODO: Animate buttons on hover -->
             </Button>
         </StackPanel>
     </Grid>
+    <!-- TODO: Add keyboard navigation and controller input later. -->
 </UserControl>
