@@ -45,9 +45,9 @@
         </Grid.RowDefinitions>
 
         <!-- Top MenuBar -->
-        <Menu Grid.Row="0" Name="MainMenuBar" Foreground="White" Margin="0,0,0,8">
-            <MenuItem Header="Map" Name="MapMenuButton" />
-            <MenuItem Header="Battle" Name="BattleMenuButton" />
+        <Menu Grid.Row="0" Name="MainMenuBar" Foreground="White" Background="#292944" Margin="0,0,0,8">
+            <MenuItem Header="Map" Name="MapMenuButton" Foreground="White" Background="#444466" />
+            <MenuItem Header="Battle" Name="BattleMenuButton" Foreground="White" Background="#444466" />
             <!-- Art assets for menu icons can be inserted here -->
         </Menu>
 
