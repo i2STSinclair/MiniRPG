@@ -51,4 +51,16 @@
   - Uses Grid layout and includes comment for future background map art.
 - Updated MapViewModel to implement Locations collection and StartBattleCommand for binding.
 
+---
+
+## MapViewModel Updated
+
+- Updated MapViewModel in ViewModels folder:
+  - Inherits from BaseViewModel.
+  - Adds ObservableCollection<string> Locations, prefilled with "Forest", "Cave", "Ruins".
+  - Adds SelectedLocation property.
+  - Adds StartBattleCommand (RelayCommand).
+  - When executed, logs "Starting battle at [SelectedLocation]" using Debug.WriteLine.
+  - Added TODO comment for future connection to BattleViewModel and enemy data loading.
+
 This line is kept as requested.

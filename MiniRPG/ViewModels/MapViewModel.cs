@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Windows.Input;
 
 namespace MiniRPG.ViewModels
@@ -15,6 +16,13 @@ namespace MiniRPG.ViewModels
             set { _locations = value; OnPropertyChanged(); }
         }
 
+        private string? _selectedLocation;
+        public string? SelectedLocation
+        {
+            get => _selectedLocation;
+            set { _selectedLocation = value; OnPropertyChanged(); }
+        }
+
         public ICommand StartBattleCommand { get; }
 
         public MapViewModel()
@@ -23,16 +31,15 @@ namespace MiniRPG.ViewModels
             {
                 "Forest",
                 "Cave",
-                "Castle",
-                "Village"
+                "Ruins"
             };
             StartBattleCommand = new RelayCommand(_ => StartBattle());
         }
 
         private void StartBattle()
         {
-            // TODO: Implement battle start logic
-            // Future: Insert transition/animation logic here
+            Debug.WriteLine($"Starting battle at [{SelectedLocation}]");
+            // TODO: In future, connect to BattleViewModel and load enemy data
         }
     }
 }
