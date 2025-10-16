@@ -470,3 +470,15 @@
   - <!-- TODO: Add splash screen -->
   - <!-- TODO: Add animated intro text -->
   - <!-- TODO: Add save-slot selection -->
+
+---
+
+## Item Model Added
+
+- Created Item.cs in Models folder.
+- Item class has Name, Description, Type, and Value properties.
+- Constructor for quick setup.
+- Static GetSampleItems() returns a few basic items.
+- TODO for item effects and rarity expansion.
+
+---

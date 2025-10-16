@@ -1,17 +1,18 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Testing checklist:
-1. Launch SimpleRPG.
-2. Title screen appears with "New Game" and "Continue" buttons.
-3. Click "New Game" → loads MapView with new Player.
-4. Win a few battles → level up → save → close app.
-5. Relaunch and choose "Continue" → loads saved Player.
-6. Verify stats and progress persisted.
-7. Confirm music changes between title, map, and battle.
-8. Add TODO placeholders:
-   <!-- TODO: Add splash screen -->
-   <!-- TODO: Add animated intro text -->
-   <!-- TODO: Add save-slot selection -->
+Create Item.cs in the Models folder.
+
+Requirements:
+• Define a public class Item with properties:
+   - string Name
+   - string Description
+   - string Type (e.g. "Consumable", "Material", "Weapon")
+   - int Value (for gold or sell price)
+• Add constructor for quick setup.
+• Add static method GetSampleItems() returning a few basic items:
+   new Item("Potion", "Restores 10 HP", "Consumable", 25),
+   new Item("Slime Goo", "Sticky residue from a defeated slime.", "Material", 5)
+• Add TODO: // Expand with item effects and rarity later
 
 ---
 
