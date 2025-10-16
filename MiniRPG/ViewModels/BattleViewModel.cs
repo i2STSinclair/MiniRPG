@@ -93,7 +93,19 @@ namespace MiniRPG.ViewModels
                     CombatLog.Add($"You reached level {Player.Level}! Your stats increased.");
                     _globalLog.Add($"You reached level {Player.Level}! Your stats increased.");
                 }
-                // Save progress after victory
+                // Loot logic
+                var loot = GameService.GetRandomLoot();
+                if (loot != null)
+                {
+                    Player.AddItem(loot);
+                    CombatLog.Add($"You found {loot.Name}!");
+                    _globalLog.Add($"You found {loot.Name}!");
+                }
+                else
+                {
+                    CombatLog.Add("No items found this time.");
+                    _globalLog.Add("No items found this time.");
+                }
                 SaveLoadService.SavePlayer(Player);
                 CombatLog.Add("Progress saved!");
                 _globalLog.Add("Progress saved!");
@@ -104,6 +116,7 @@ namespace MiniRPG.ViewModels
                 BattleEnded?.Invoke("Victory");
                 // TODO: Later - include loot drops and enemy-specific EXP scaling
                 // TODO: Later - add autosave indicator animation on screen
+                // TODO: Display loot visually in post-battle summary later
             }
             else
             {

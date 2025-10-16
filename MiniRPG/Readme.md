@@ -499,3 +499,12 @@
 - TODO for inventory capacity and sorting.
 
 ---
+
+## BattleViewModel Loot Drop Integration
+
+- After awarding EXP on victory:
+  - Calls GameService.GetRandomLoot().
+  - If loot is found, adds to Player inventory and logs the item.
+  - Otherwise, logs that no items were found.
+  - Calls SaveLoadService.SavePlayer(Player) after loot assignment.
+  - TODO for visual loot display in post-battle summary.

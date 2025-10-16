@@ -1,15 +1,16 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Edit GameService.cs.
+Modify BattleViewModel.cs.
 
 Requirements:
-• Add static method GetRandomLoot():
-   - Randomly return an Item from Item.GetSampleItems()
-   - 50% chance to drop nothing (return null)
-• Example:
-   var items = Item.GetSampleItems();
-   return rand.NextDouble() > 0.5 ? items[rand.Next(items.Count)] : null;
-• Add TODO: // Add rarity tiers and loot tables later
+• After awarding EXP on victory:
+   - var loot = GameService.GetRandomLoot();
+   - If (loot != null):
+       * Player.AddItem(loot);
+       * Append $"You found {loot.Name}!"
+   - Else append "No items found this time."
+• Call SaveLoadService.SavePlayer(Player) after loot assignment.
+• Add TODO: // Display loot visually in post-battle summary later
 
 ---
 
