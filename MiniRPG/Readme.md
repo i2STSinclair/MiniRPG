@@ -165,4 +165,13 @@
 - MainViewModel subscribes to OnStartBattle, creates a new BattleViewModel, sets CurrentViewModel, and logs entry.
 - TODO added for fade transition and music change between map and battle.
 
+---
+
+## Player Model Added
+
+- Created Player.cs in Models folder.
+  - Properties: Name, HP, MaxHP, Attack, Defense.
+  - Constructor sets defaults (HP = 30, Attack = 5, Defense = 2).
+  - TODO for future inventory, experience, and leveling system.
+
 This line is kept as requested.
