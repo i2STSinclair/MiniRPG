@@ -1,25 +1,15 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Modify Player.cs.
+Edit BattleViewModel.cs.
 
 Requirements:
-• Add properties:
-   - int Level (default 1)
-   - int Experience (default 0)
-   - int ExperienceToNextLevel (default 10)
-• Add method GainExperience(int amount):
-   - Experience += amount
-   - If Experience >= ExperienceToNextLevel:
-       * Level++
-       * Experience -= ExperienceToNextLevel
-       * ExperienceToNextLevel = (int)(ExperienceToNextLevel * 1.5)
-       * MaxHP += 5
-       * Attack += 1
-       * Defense += 1
-       * HP = MaxHP
-   - Return true if level-up occurred, false otherwise.
-• Add TODO: // Later - play level-up animation, add ability points, and save to file
-
+• When the player defeats an enemy (EnemyHP <= 0):
+   - int exp = new Random().Next(5, 15);
+   - bool leveledUp = Player.GainExperience(exp);
+   - Append $"You gained {exp} experience!"
+   - If leveledUp, append $"You reached level {Player.Level}! Your stats increased."
+• Call BattleEnded?.Invoke("Victory") afterward.
+• Add TODO: // Later - include loot drops and enemy-specific EXP scaling
 
 ---
 

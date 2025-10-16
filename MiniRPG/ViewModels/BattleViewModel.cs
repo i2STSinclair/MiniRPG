@@ -83,11 +83,22 @@ namespace MiniRPG.ViewModels
             {
                 CombatLog.Add("You defeated the enemy!");
                 _globalLog.Add("You defeated the enemy!");
+                // Experience and level-up logic
+                int exp = new Random().Next(5, 15);
+                bool leveledUp = Player.GainExperience(exp);
+                CombatLog.Add($"You gained {exp} experience!");
+                _globalLog.Add($"You gained {exp} experience!");
+                if (leveledUp)
+                {
+                    CombatLog.Add($"You reached level {Player.Level}! Your stats increased.");
+                    _globalLog.Add($"You reached level {Player.Level}! Your stats increased.");
+                }
                 IsBattleOver = true;
                 _canAct = false;
                 BattleResult = "Victory";
                 UpdateCommands();
                 BattleEnded?.Invoke("Victory");
+                // TODO: Later - include loot drops and enemy-specific EXP scaling
             }
             else
             {

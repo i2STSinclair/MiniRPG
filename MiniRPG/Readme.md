@@ -261,3 +261,14 @@
   - GainExperience(int amount) method for experience and level-up logic.
   - Level-up increases stats and restores HP.
   - TODO for future level-up animation, ability points, and save to file.
+
+---
+
+## BattleViewModel Experience & Level-Up
+
+- When the player defeats an enemy:
+  - Awards random experience (5–15).
+  - Calls Player.GainExperience and logs experience gain.
+  - If leveled up, logs new level and stat increase.
+  - Calls BattleEnded?.Invoke("Victory") after.
+  - TODO for loot drops and enemy-specific EXP scaling.
