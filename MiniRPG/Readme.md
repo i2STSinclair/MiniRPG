@@ -141,6 +141,14 @@
 
 ---
 
+## GameService Random Loot Support
+
+- Added GetRandomLoot() to GameService:
+  - 50% chance to return a random Item from Item.GetSampleItems(), otherwise returns null.
+  - TODO for rarity tiers and loot tables.
+
+---
+
 ## MainWindow TODO Placeholders Added
 
 - Added TODO comment placeholders at the top of MainWindow.xaml for:

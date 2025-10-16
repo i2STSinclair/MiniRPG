@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using MiniRPG.Models;
 
 namespace MiniRPG.Services
 {
@@ -26,6 +27,18 @@ namespace MiniRPG.Services
         public static int CalculateDamage()
         {
             return _random.Next(1, 11);
+        }
+
+        /// <summary>
+        /// Returns a random loot item or null (50% chance).
+        /// </summary>
+        public static Item? GetRandomLoot()
+        {
+            var items = Item.GetSampleItems();
+            if (_random.NextDouble() > 0.5)
+                return items[_random.Next(items.Count)];
+            return null;
+            // TODO: Add rarity tiers and loot tables later
         }
 
         // TODO: Expand with enemy stats, player stats, battle rewards

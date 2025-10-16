@@ -1,14 +1,15 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Modify Player.cs.
+Edit GameService.cs.
 
 Requirements:
-• Add ObservableCollection<Item> Inventory { get; set; } = new();
-• Add method AddItem(Item item):
-   - Inventory.Add(item);
-   - Optionally Debug.WriteLine($"{item.Name} added to inventory.")
-• Ensure Inventory is serialized properly in SaveLoadService (JsonSerializer supports ObservableCollection automatically).
-• Add TODO: // Add inventory capacity and sorting later
+• Add static method GetRandomLoot():
+   - Randomly return an Item from Item.GetSampleItems()
+   - 50% chance to drop nothing (return null)
+• Example:
+   var items = Item.GetSampleItems();
+   return rand.NextDouble() > 0.5 ? items[rand.Next(items.Count)] : null;
+• Add TODO: // Add rarity tiers and loot tables later
 
 ---
 
