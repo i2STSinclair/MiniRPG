@@ -51,7 +51,7 @@ namespace MiniRPG.ViewModels
 
         private void ShowMap()
         {
-            var mapVM = new MapViewModel(GlobalLog, CurrentPlayer);
+            var mapVM = new MapViewModel(CurrentPlayer);
             mapVM.OnStartBattle += async location =>
             {
                 var battleVM = new BattleViewModel(GlobalLog, CurrentPlayer);
@@ -71,6 +71,7 @@ namespace MiniRPG.ViewModels
             AddLog("Switched to MapView");
             // Future: Insert transition/animation logic here for MapView
         }
+        // TODO: Add currency, inventory, and gear tabs next
 
         private void ShowBattle()
         {

@@ -1,16 +1,16 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Edit MapView.xaml.
+Modify MainViewModel.cs and MapViewModel.cs.
 
-Requirements:
-• Add a StackPanel at the top displaying player info:
-   - "Level: {Binding Player.Level}"
-   - "HP: {Binding Player.HP}/{Binding Player.MaxHP}"
-   - "EXP: {Binding Player.Experience}/{Binding Player.ExperienceToNextLevel}"
-• Bind Player through DataContext of MapViewModel (accept Player as constructor argument).
-• Include TODO comments:
-   <!-- TODO: Replace text with pixel-art status window -->
-   <!-- TODO: Add animated portrait or player sprite here -->
+MainViewModel:
+• When initializing MapViewModel, pass CurrentPlayer.
+
+MapViewModel:
+• Add constructor MapViewModel(Player player)
+• Store reference to Player and expose it as public property
+• Update bindings so player info displays in MapView
+
+Add TODO: // Add currency, inventory, and gear tabs next
 
 ---
 

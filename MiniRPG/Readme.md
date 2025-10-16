@@ -291,3 +291,11 @@
 - MapViewModel accepts Player in constructor and exposes it for binding.
 - MainViewModel passes CurrentPlayer to MapViewModel.
 - Added TODO comments for pixel-art status window and animated portrait/player sprite.
+
+---
+
+## MapViewModel Player Binding & TODOs
+
+- MapViewModel now has a constructor accepting Player and exposes it for binding.
+- MainViewModel passes CurrentPlayer to MapViewModel for player info display.
+- Added TODOs for currency, inventory, and gear tabs next.

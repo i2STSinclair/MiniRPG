@@ -46,6 +46,19 @@ namespace MiniRPG.ViewModels
             StartBattleCommand = new RelayCommand(_ => StartBattle());
         }
 
+        public MapViewModel(Player player)
+        {
+            Player = player;
+            Locations = new ObservableCollection<string>
+            {
+                "Forest",
+                "Cave",
+                "Ruins"
+            };
+            StartBattleCommand = new RelayCommand(_ => StartBattle());
+            // TODO: Add currency, inventory, and gear tabs next
+        }
+
         private void StartBattle()
         {
             var msg = $"Starting battle at [{SelectedLocation}]";
