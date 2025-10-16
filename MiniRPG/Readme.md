@@ -508,3 +508,12 @@
   - Otherwise, logs that no items were found.
   - Calls SaveLoadService.SavePlayer(Player) after loot assignment.
   - TODO for visual loot display in post-battle summary.
+
+---
+
+## MapView Inventory UI Added
+
+- Added Expander in MapView.xaml for Inventory, bound to Player.Inventory.
+- Displays each item's Name and Type; shows Description for selected item.
+- Added SelectedInventoryItem property to MapViewModel for selection binding.
+- TODOs for pixel-art inventory icons and category tabs.

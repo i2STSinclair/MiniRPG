@@ -1,16 +1,15 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Modify BattleViewModel.cs.
+Edit MapView.xaml.
 
 Requirements:
-• After awarding EXP on victory:
-   - var loot = GameService.GetRandomLoot();
-   - If (loot != null):
-       * Player.AddItem(loot);
-       * Append $"You found {loot.Name}!"
-   - Else append "No items found this time."
-• Call SaveLoadService.SavePlayer(Player) after loot assignment.
-• Add TODO: // Display loot visually in post-battle summary later
+• Add an Expander or ListBox titled "Inventory".
+• Bind ItemsSource to Player.Inventory.
+• Display each item’s Name and Type.
+• When selected, show Description in a TextBlock below.
+• Add TODO:
+   <!-- TODO: Replace with pixel-art inventory icons -->
+   <!-- TODO: Add categories (Consumables, Materials, etc.) -->
 
 ---
 

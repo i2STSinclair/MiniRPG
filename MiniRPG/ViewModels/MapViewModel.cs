@@ -27,6 +27,13 @@ namespace MiniRPG.ViewModels
             set { _selectedLocation = value; OnPropertyChanged(); }
         }
 
+        private Item? _selectedInventoryItem;
+        public Item? SelectedInventoryItem
+        {
+            get => _selectedInventoryItem;
+            set { _selectedInventoryItem = value; OnPropertyChanged(); }
+        }
+
         public ICommand StartBattleCommand { get; }
         public ICommand RestCommand { get; }
         public ICommand SaveCommand { get; }

@@ -15,6 +15,7 @@
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" /> <!-- Inventory row -->
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
@@ -44,10 +45,31 @@
             <!-- TODO: Replace with pixel-art popup animation for future version -->
         </TextBlock>
 
-        <Label Grid.Row="1" Content="Choose a Battle Location" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White" />
+        <!-- Inventory Expander -->
+        <Expander Grid.Row="1" Header="Inventory" Margin="0,0,0,10" Foreground="White" Background="#292944">
+            <!-- TODO: Replace with pixel-art inventory icons -->
+            <!-- TODO: Add categories (Consumables, Materials, etc.) -->
+            <StackPanel>
+                <ListBox x:Name="InventoryListBox" ItemsSource="{Binding Player.Inventory}" SelectedItem="{Binding SelectedInventoryItem, Mode=TwoWay}" DisplayMemberPath="Name" Background="#222233" Foreground="White" Height="100">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Name}" FontWeight="Bold" Foreground="White" />
+                                <TextBlock Text=" (" Foreground="White" />
+                                <TextBlock Text="{Binding Type}" Foreground="White" />
+                                <TextBlock Text=")" Foreground="White" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <TextBlock Text="{Binding SelectedInventoryItem.Description}" Foreground="White" Margin="0,8,0,0" TextWrapping="Wrap" />
+            </StackPanel>
+        </Expander>
 
-        <ListBox Grid.Row="2" Name="LocationList" ItemsSource="{Binding Locations}" Margin="0,0,0,10" />
+        <Label Grid.Row="2" Content="Choose a Battle Location" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White" />
 
-        <Button Grid.Row="3" Content="Fight!" Command="{Binding StartBattleCommand}" HorizontalAlignment="Right" Width="100" Foreground="White" Background="#444466" />
+        <ListBox Grid.Row="3" Name="LocationList" ItemsSource="{Binding Locations}" Margin="0,0,0,10" />
+
+        <Button Grid.Row="4" Content="Fight!" Command="{Binding StartBattleCommand}" HorizontalAlignment="Right" Width="100" Foreground="White" Background="#444466" />
     </Grid>
 </UserControl>
