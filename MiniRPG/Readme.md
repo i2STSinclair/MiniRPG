@@ -226,4 +226,12 @@
 - Sets IsBattleOver = true to ensure overlay/button visibility.
 - Added TODO for hooking into save/load for persistent battle results.
 
+---
+
+## BooleanToVisibilityConverter Added
+
+- Created Converters folder and added BooleanToVisibilityConverter.cs.
+- Implements IValueConverter to convert true → Visibility.Visible, false → Visibility.Collapsed.
+- Includes TODO for future game state UI converters.
+
 This line is kept as requested.

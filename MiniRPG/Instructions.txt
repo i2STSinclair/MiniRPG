@@ -1,12 +1,12 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Add ReturnToMapCommand in BattleViewModel.cs.
+Create a new folder named Converters, then add a file BooleanToVisibilityConverter.cs.
 
 Requirements:
-• Initialize ReturnToMapCommand = new RelayCommand(_ => BattleEnded?.Invoke("Return"));
-• When executed, logs "Returning to map..." to CombatLog.
-• Set IsBattleOver = true to ensure overlay/button visible.
-• Add TODO: // Hook this into save/load later so battle results persist
+• Implement IValueConverter
+• Convert true → Visibility.Visible, false → Visibility.Collapsed
+• Use in XAML bindings for IsBattleOver and overlay/button visibility
+• Add TODO: // Add more converters later for game state UI control
 
 ---
 
