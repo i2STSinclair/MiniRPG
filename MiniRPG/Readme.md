@@ -461,3 +461,12 @@
   - C triggers ContinueCommand
 - Added ToolTips to buttons showing shortcuts.
 - Added TODO for keyboard navigation and controller input.
+
+---
+
+## Title Screen & Save/Load Testing TODOs Added
+
+- Added TODO placeholders to MainWindow.xaml:
+  - <!-- TODO: Add splash screen -->
+  - <!-- TODO: Add animated intro text -->
+  - <!-- TODO: Add save-slot selection -->

@@ -1,13 +1,17 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Update TitleView.xaml.
-
-Requirements:
-• Add KeyBindings:
-   - Enter → triggers NewGameCommand
-   - C → triggers ContinueCommand
-• Add ToolTips to buttons showing these shortcuts.
-• Add TODO: // Add keyboard navigation and controller input later.
+Testing checklist:
+1. Launch SimpleRPG.
+2. Title screen appears with "New Game" and "Continue" buttons.
+3. Click "New Game" → loads MapView with new Player.
+4. Win a few battles → level up → save → close app.
+5. Relaunch and choose "Continue" → loads saved Player.
+6. Verify stats and progress persisted.
+7. Confirm music changes between title, map, and battle.
+8. Add TODO placeholders:
+   <!-- TODO: Add splash screen -->
+   <!-- TODO: Add animated intro text -->
+   <!-- TODO: Add save-slot selection -->
 
 ---
 
