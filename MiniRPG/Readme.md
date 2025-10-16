@@ -531,3 +531,12 @@
     - Logs "You used a Potion and recovered 10 HP." to GlobalLog.
   - Otherwise, logs "That item cannot be used now." to GlobalLog.
 - Added TODO comment for future targeting and status effects logic.
+
+---
+
+## MapView.xaml: Use Item Button Added
+
+- Added a Button labeled "Use Item" under the Inventory ListBox in MapView.xaml.
+- Button's Command is bound to UseItemCommand.
+- CommandParameter is bound to the SelectedItem of the Inventory ListBox.
+- Added TODO comment for future contextual radial menu or drag/drop inventory UI.

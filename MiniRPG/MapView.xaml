@@ -63,6 +63,8 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
                 <TextBlock Text="{Binding SelectedInventoryItem.Description}" Foreground="White" Margin="0,8,0,0" TextWrapping="Wrap" />
+                <Button Content="Use Item" Command="{Binding UseItemCommand}" CommandParameter="{Binding SelectedItem, ElementName=InventoryListBox}" Margin="0,8,0,0" Foreground="White" Background="#444466" />
+                <!-- TODO: Replace with contextual radial menu or drag/drop inventory UI -->
             </StackPanel>
         </Expander>
 

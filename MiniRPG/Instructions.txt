@@ -1,17 +1,13 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Modify MapViewModel.cs.
+Update MapView.xaml.
 
 Requirements:
-• Add RelayCommand named UseItemCommand.
-• Command parameter: selected Item.
-• When executed:
-   - If Item.Type == "Consumable" and Item.Name == "Potion":
-       * Player.HP = Math.Min(Player.MaxHP, Player.HP + 10);
-       * Remove item from Inventory.
-       * Log "You used a Potion and recovered 10 HP."
-   - Else Log "That item cannot be used now."
-• Add TODO: // Add targeting and status effects later
+• Under Inventory list, add a Button labeled "Use Item".
+• Bind its Command to UseItemCommand.
+• Bind CommandParameter to SelectedItem of the ListBox.
+• Add TODO:
+   <!-- TODO: Replace with contextual radial menu or drag/drop inventory UI -->
 
 ---
 
