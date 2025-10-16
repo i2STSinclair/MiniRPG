@@ -1,17 +1,15 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Edit MainWindow.xaml.
+Create AudioService.cs in the Services folder.
 
 Requirements:
-• Add a DataTemplate for TitleViewModel in Window.Resources:
-
-    <DataTemplate DataType="{x:Type vm:TitleViewModel}">
-        <v:TitleView />
-    </DataTemplate>
-
-• Ensure vm and v namespaces are already declared (vm for ViewModels, v for Views).
-• Confirm ContentControl bound to CurrentViewModel automatically loads this view.
-• Add TODO: <!-- TODO: Add animated fade between title and map -->
+• Create static class AudioService.
+• Add static methods:
+   - PlayTitleTheme()
+   - PlayMapTheme()
+   - PlayBattleTheme()
+• Use System.Media.SoundPlayer with placeholder .wav files (check existence before playing).
+• Add TODO: // Replace with cross-fade audio engine later.
 
 ---
 

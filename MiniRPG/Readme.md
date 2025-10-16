@@ -432,3 +432,12 @@
 
 - Added DataTemplate for TitleViewModel in MainWindow.xaml resources to load TitleView.
 - Added TODO for animated fade between title and map.
+
+---
+
+## AudioService Added
+
+- Created AudioService.cs in Services folder.
+- Provides PlayTitleTheme, PlayMapTheme, and PlayBattleTheme methods using System.Media.SoundPlayer and placeholder .wav files.
+- Checks file existence before playing.
+- TODO for cross-fade audio engine.
