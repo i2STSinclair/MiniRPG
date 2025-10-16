@@ -142,7 +142,11 @@ namespace MiniRPG.ViewModels
 
         private void OnReturnToMap()
         {
+            CombatLog.Add("Returning to map...");
+            _globalLog.Add("Returning to map...");
+            IsBattleOver = true;
             BattleEnded?.Invoke("Return");
+            // TODO: Hook this into save/load later so battle results persist
             // TODO: Replace with animated return transition to Map screen
         }
 

@@ -218,4 +218,12 @@
 - Button is visible when IsBattleOver is true and calls BattleEnded?.Invoke("Return") when clicked.
 - Added TODO for animated return transition to Map screen.
 
+---
+
+## BattleViewModel: ReturnToMapCommand Logging & TODO
+
+- ReturnToMapCommand now logs "Returning to map..." to CombatLog and GlobalLog.
+- Sets IsBattleOver = true to ensure overlay/button visibility.
+- Added TODO for hooking into save/load for persistent battle results.
+
 This line is kept as requested.
