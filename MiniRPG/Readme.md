@@ -231,8 +231,8 @@
 ## BooleanToVisibilityConverter Added
 
 - Created Converters folder and added BooleanToVisibilityConverter.cs.
-- Implements IValueConverter to convert true → Visibility.Visible, false → Visibility.Collapsed.
-- Includes TODO for future game state UI converters.
+  - Implements IValueConverter to convert true → Visibility.Visible, false → Visibility.Collapsed.
+  - Includes TODO for future game state UI converters.
 
 ---
 
@@ -344,3 +344,10 @@
 - If no save exists, creates a new Player.
 - Adds SaveCommand using RelayCommand to save player data.
 - TODO for auto-save after each battle or major event.
+
+---
+
+## MapView Save Game Button Added
+
+- Added 'Save Game' button next to 'Rest' in MapView.xaml, bound to SaveCommand in MainViewModel using RelativeSource.
+- Added TODO for auto-save indicator and custom UI slot menu.
