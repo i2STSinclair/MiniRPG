@@ -1,8 +1,10 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using MiniRPG.Models;
+using MiniRPG.Services;
 
 namespace MiniRPG.ViewModels
 {
@@ -27,7 +29,15 @@ namespace MiniRPG.ViewModels
 
         public ICommand StartBattleCommand { get; }
         public ICommand RestCommand { get; }
+        public ICommand SaveCommand { get; }
         private ObservableCollection<string> _globalLog;
+
+        private bool _isSaveConfirmed;
+        public bool IsSaveConfirmed
+        {
+            get => _isSaveConfirmed;
+            set { _isSaveConfirmed = value; OnPropertyChanged(); }
+        }
 
         public Player Player { get; }
 
@@ -46,6 +56,7 @@ namespace MiniRPG.ViewModels
             };
             StartBattleCommand = new RelayCommand(_ => StartBattle());
             RestCommand = new RelayCommand(_ => Rest());
+            SaveCommand = new RelayCommand(async _ => await SaveGame());
         }
 
         public MapViewModel(Player player)
@@ -76,6 +87,15 @@ namespace MiniRPG.ViewModels
             OnPropertyChanged(nameof(Player));
             _globalLog?.Add("You rest and recover all HP.");
             // TODO: Replace with inn scene and cost-based healing later
+        }
+
+        private async Task SaveGame()
+        {
+            SaveLoadService.SavePlayer(Player);
+            IsSaveConfirmed = true;
+            await Task.Delay(2000);
+            IsSaveConfirmed = false;
+            // TODO: Replace with pixel-art popup animation for future version
         }
     }
 }

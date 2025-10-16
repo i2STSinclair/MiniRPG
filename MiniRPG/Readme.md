@@ -368,3 +368,12 @@
 - On Application_Startup, checks for player_save.json and loads Player if available, otherwise creates new Player.
 - Injects Player into MainViewModel.
 - TODO for proper title screen with "New Game" or "Continue".
+
+---
+
+## MapView Save Confirmation Message
+
+- Added IsSaveConfirmed property and SaveCommand to MapViewModel.
+- SaveCommand sets IsSaveConfirmed true, hides after 2 seconds.
+- MapView.xaml displays 'Game Saved!' message below Save button, bound to IsSaveConfirmed.
+- Added TODO for pixel-art popup animation.

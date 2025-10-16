@@ -34,6 +34,11 @@
                 <!-- TODO: Replace with auto-save indicator and custom UI slot menu -->
             </Button>
         </StackPanel>
+        <!-- Game Saved message -->
+        <TextBlock Grid.Row="0" Text="Game Saved!" Foreground="LimeGreen" FontWeight="Bold" FontSize="16" Margin="0,32,0,0" HorizontalAlignment="Center"
+                   Visibility="{Binding IsSaveConfirmed, Converter={StaticResource BoolToVis}}">
+            <!-- TODO: Replace with pixel-art popup animation for future version -->
+        </TextBlock>
 
         <Label Grid.Row="1" Content="Choose a Battle Location" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White" />
 
