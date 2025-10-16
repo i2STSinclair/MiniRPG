@@ -360,3 +360,11 @@
   - Calls SaveLoadService.SavePlayer(Player).
   - Appends "Progress saved!" to CombatLog and GlobalLog.
   - TODO for autosave indicator animation on screen.
+
+---
+
+## App Startup Save/Load Logic
+
+- On Application_Startup, checks for player_save.json and loads Player if available, otherwise creates new Player.
+- Injects Player into MainViewModel.
+- TODO for proper title screen with "New Game" or "Continue".

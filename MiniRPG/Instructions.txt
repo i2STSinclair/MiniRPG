@@ -1,12 +1,12 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Modify BattleViewModel.cs.
+Edit App.xaml.cs.
 
 Requirements:
-• When battle ends in victory:
-   - Call SaveLoadService.SavePlayer(Player)
-   - Append "Progress saved!" to CombatLog.
-• Add TODO: // Later - add autosave indicator animation on screen
+• On Application_Startup, check if "player_save.json" exists.
+• If so, load Player via SaveLoadService.LoadPlayer() and inject it into MainViewModel.
+• Otherwise, start with a fresh Player.
+• Add TODO: // Replace with proper title screen offering "New Game" or "Continue"
 
 ---
 
