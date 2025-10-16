@@ -1,1 +1,3 @@
 ﻿---
+
+After you finish, clear everything above the --- dash separator and update the Readme.md file with the changes.
