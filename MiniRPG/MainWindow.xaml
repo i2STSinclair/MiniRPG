@@ -1,4 +1,7 @@
-﻿<!-- TODO: Replace entire layout with pixel-art themed UI -->
+﻿<!-- TODO: Save Player to JSON file -->
+<!-- TODO: Add Load feature on startup -->
+<!-- TODO: Add main menu scene -->
+<!-- TODO: Replace entire layout with pixel-art themed UI -->
 <!-- TODO: Add main menu and title screen before MapView -->
 <!-- TODO: Hook into background music manager -->
 <!-- TODO: Add save system -->

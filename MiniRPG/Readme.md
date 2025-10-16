@@ -316,3 +316,12 @@
 - Added card-style Border behind main ContentControl with proper margin and spacing.
 - Used darker background for log area and added margin for spacing.
 - Added placeholder TODO comments for pixel-art UI, main menu/title screen, and background music manager.
+
+---
+
+## Final Testing Checklist TODOs Added
+
+- Added TODO placeholders to MainWindow.xaml:
+  - <!-- TODO: Save Player to JSON file -->
+  - <!-- TODO: Add Load feature on startup -->
+  - <!-- TODO: Add main menu scene -->

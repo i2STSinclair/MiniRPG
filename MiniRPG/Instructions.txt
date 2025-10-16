@@ -1,15 +1,16 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Enhance MainWindow.xaml.
-
-Requirements:
-• Add a Border or Card-style background behind the main ContentControl.
-• Use darker background for the log TextBox area.
-• Add corner padding and subtle spacing.
-• Add placeholder comments:
-   <!-- TODO: Replace entire layout with pixel-art themed UI -->
-   <!-- TODO: Add main menu and title screen before MapView -->
-   <!-- TODO: Hook into background music manager -->
+Testing checklist:
+1. Start game → verify Level 1, HP 30.
+2. Fight and win battles to gain EXP.
+3. Observe level-ups increasing stats.
+4. HP carries over between battles.
+5. Use “Rest” on Map to recover HP.
+6. Repeat several loops; verify player data persists.
+7. Add final TODO placeholders:
+   <!-- TODO: Save Player to JSON file -->
+   <!-- TODO: Add Load feature on startup -->
+   <!-- TODO: Add main menu scene -->
 
 ---
 
