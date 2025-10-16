@@ -1,17 +1,16 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Edit App.xaml (or BattleView.xaml Resources).
-
-Add:
-<converters:BooleanToVisibilityConverter x:Key="BoolToVis" />
-
-Ensure xmlns:converters="clr-namespace:SimpleRPG.Converters" is defined.
-
-Then in BattleView.xaml:
-<TextBlock Visibility="{Binding IsBattleOver, Converter={StaticResource BoolToVis}}" ... />
-<Button Visibility="{Binding IsBattleOver, Converter={StaticResource BoolToVis}}" ... />
-
-Comment: <!-- TODO: Transition this logic to state-based ViewModel system later -->
+Testing checklist:
+1. Launch SimpleRPG.
+2. Navigate to MapView.
+3. Select a location and click "Fight!".
+4. Attack until you win or lose.
+5. Observe overlay text ("Victory!" / "Defeat!") when battle ends.
+6. Click "Return to Map" to go back.
+7. Verify the log persists and new battles can start.
+8. Add TODO placeholders:
+   <!-- TODO: Add save system -->
+   <!-- TODO: Add inventory and level-up after victory -->
 
 ---
 

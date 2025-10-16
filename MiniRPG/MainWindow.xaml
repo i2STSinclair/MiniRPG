@@ -1,4 +1,6 @@
-﻿<!-- TODO: Add background music, player sprite, enemy sprite, and location art -->
+﻿<!-- TODO: Add save system -->
+<!-- TODO: Add inventory and level-up after victory -->
+<!-- TODO: Add background music, player sprite, enemy sprite, and location art -->
 <!-- TODO: Add background art per location -->
 <!-- TODO: Add music/audio triggers when battle starts -->
 <!-- TODO: Later SceneManager or Animation layer -->

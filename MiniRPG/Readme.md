@@ -242,4 +242,12 @@
 - Updated BattleView.xaml to use BoolToVis for overlay/button visibility and added xmlns:converters.
 - Added TODO for future state-based ViewModel system.
 
+---
+
+## Testing Checklist TODOs Added
+
+- Added TODO placeholders to MainWindow.xaml:
+  - <!-- TODO: Add save system -->
+  - <!-- TODO: Add inventory and level-up after victory -->
+
 This line is kept as requested.
