@@ -579,3 +579,18 @@
 - Updated MainWindow.xaml:
   - Global button style now uses gold text (#F9E97A) on dark backgrounds (#222233) and bold font for visibility.
 - Ensured all UI elements have sufficient contrast for readability.
+
+---
+
+## Bug Fix: Inventory ListBox XAML Error
+
+- Fixed XamlParseException in MapView.xaml by removing DisplayMemberPath from InventoryListBox when using ItemTemplate.
+- Inventory now displays correctly and the Continue button error is resolved.
+
+---
+
+## Bug Fix: Fight Button Now Switches to BattleView
+
+- Updated MainViewModel.cs:
+  - Subscribed to MapViewModel.OnStartBattle in both New and Continue game flows.
+  - Clicking Fight now properly switches to BattleView and starts a battle.

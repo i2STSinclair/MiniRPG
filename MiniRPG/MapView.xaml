@@ -53,7 +53,7 @@
             <!-- TODO: Replace with pixel-art inventory icons -->
             <!-- TODO: Add categories (Consumables, Materials, etc.) -->
             <StackPanel>
-                <ListBox x:Name="InventoryListBox" ItemsSource="{Binding Player.Inventory}" SelectedItem="{Binding SelectedInventoryItem, Mode=TwoWay}" DisplayMemberPath="Name" Background="#222233" Foreground="White" Height="100">
+                <ListBox x:Name="InventoryListBox" ItemsSource="{Binding Player.Inventory}" SelectedItem="{Binding SelectedInventoryItem, Mode=TwoWay}" Background="#222233" Foreground="White" Height="100">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">

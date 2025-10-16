@@ -54,6 +54,22 @@ namespace MiniRPG.ViewModels
             {
                 CurrentPlayer = new Player();
                 var mapVM = new MapViewModel(GlobalLog, CurrentPlayer);
+                mapVM.OnStartBattle += async location =>
+                {
+                    var battleVM = new BattleViewModel(GlobalLog, CurrentPlayer);
+                    // Optionally pass location to BattleViewModel here
+                    battleVM.BattleEnded += async result =>
+                    {
+                        AddLog($"Battle ended with result: {result}");
+                        // TODO: Later, implement rewards and experience points after victory
+                        await Task.Delay(1000);
+                        ShowMap();
+                    };
+                    CurrentViewModel = battleVM;
+                    try { AudioService.PlayBattleTheme(); } catch { }
+                    AddLog($"Entering battle at {location}");
+                    // TODO: Later - fade transition and music change between map and battle
+                };
                 CurrentViewModel = mapVM;
                 try { AudioService.PlayMapTheme(); } catch { }
                 AddLog("A new adventure begins!");
@@ -64,6 +80,22 @@ namespace MiniRPG.ViewModels
                 var loadedPlayer = SaveLoadService.LoadPlayer();
                 CurrentPlayer = loadedPlayer ?? new Player();
                 var mapVM = new MapViewModel(GlobalLog, CurrentPlayer);
+                mapVM.OnStartBattle += async location =>
+                {
+                    var battleVM = new BattleViewModel(GlobalLog, CurrentPlayer);
+                    // Optionally pass location to BattleViewModel here
+                    battleVM.BattleEnded += async result =>
+                    {
+                        AddLog($"Battle ended with result: {result}");
+                        // TODO: Later, implement rewards and experience points after victory
+                        await Task.Delay(1000);
+                        ShowMap();
+                    };
+                    CurrentViewModel = battleVM;
+                    try { AudioService.PlayBattleTheme(); } catch { }
+                    AddLog($"Entering battle at {location}");
+                    // TODO: Later - fade transition and music change between map and battle
+                };
                 CurrentViewModel = mapVM;
                 try { AudioService.PlayMapTheme(); } catch { }
                 AddLog("Welcome back!");
