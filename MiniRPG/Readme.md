@@ -30,4 +30,14 @@
 - Implemented RelayCommand in ViewModels folder for MVVM command binding.
 - Added placeholder MapViewModel and BattleViewModel classes inheriting from BaseViewModel.
 
+---
+
+## RelayCommand Refactored
+
+- Refactored RelayCommand in ViewModels folder:
+  - Implements ICommand for MVVM button bindings.
+  - Constructor accepts Action<object?> execute and optional Func<object?, bool>? canExecute.
+  - Implements CanExecuteChanged, CanExecute, and Execute with proper null checking.
+  - Added comments for future parameter expansion and context support.
+
 This line is kept as requested.
