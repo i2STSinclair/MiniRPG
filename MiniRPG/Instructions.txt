@@ -1,16 +1,16 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Testing checklist:
-1. Start game → verify Level 1, HP 30.
-2. Fight and win battles to gain EXP.
-3. Observe level-ups increasing stats.
-4. HP carries over between battles.
-5. Use “Rest” on Map to recover HP.
-6. Repeat several loops; verify player data persists.
-7. Add final TODO placeholders:
-   <!-- TODO: Save Player to JSON file -->
-   <!-- TODO: Add Load feature on startup -->
-   <!-- TODO: Add main menu scene -->
+Create SaveLoadService.cs in the Services folder.
+
+Requirements:
+• Use System.Text.Json
+• Implement two static methods:
+   - SavePlayer(Player player, string filePath = "player_save.json")
+   - LoadPlayer(string filePath = "player_save.json") → returns Player or null
+• SavePlayer serializes Player object to JSON and writes it to file.
+• LoadPlayer reads file if it exists, deserializes JSON to Player, and returns it.
+• Add proper exception handling (try/catch with Debug.WriteLine).
+• Add TODO: // Extend to save inventory, map progress, and settings later
 
 ---
 

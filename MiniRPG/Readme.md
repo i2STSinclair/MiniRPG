@@ -325,3 +325,13 @@
   - <!-- TODO: Save Player to JSON file -->
   - <!-- TODO: Add Load feature on startup -->
   - <!-- TODO: Add main menu scene -->
+
+---
+
+## SaveLoadService Added
+
+- Created SaveLoadService.cs in Services folder.
+  - Uses System.Text.Json for serialization.
+  - SavePlayer serializes Player to JSON and writes to file.
+  - LoadPlayer reads file and deserializes Player from JSON.
+  - Includes exception handling and TODO for saving inventory, map progress, and settings.
