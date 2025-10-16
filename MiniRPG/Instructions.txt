@@ -1,16 +1,15 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Create TitleViewModel.cs in the ViewModels folder.
+Modify MainViewModel.cs.
 
 Requirements:
-• Inherit from BaseViewModel.
-• Add two RelayCommands:
-   - NewGameCommand
-   - ContinueCommand
-• Add event Action<string> TitleSelectionMade;
-• When NewGameCommand executes, call TitleSelectionMade?.Invoke("New");
-• When ContinueCommand executes, call TitleSelectionMade?.Invoke("Continue");
-• Add TODO: // Later - add fade transition and intro dialogue
+• On startup, set CurrentViewModel = new TitleViewModel().
+• Subscribe to TitleSelectionMade event:
+   - If "New": create new Player() and new MapViewModel(CurrentPlayer)
+   - If "Continue": try SaveLoadService.LoadPlayer() → if null, create new Player()
+• Then set CurrentViewModel to MapViewModel.
+• Keep GlobalLog available and append "Welcome back!" or "A new adventure begins!"
+• Add TODO: // Add intro cutscene for new game start
 
 ---
 

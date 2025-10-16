@@ -413,3 +413,15 @@
 - Adds NewGameCommand and ContinueCommand (RelayCommand).
 - Adds event TitleSelectionMade, invoked on command execution.
 - TODO for fade transition and intro dialogue.
+
+---
+
+## MainViewModel Title Screen Integration
+
+- On startup, sets CurrentViewModel = new TitleViewModel().
+- Subscribes to TitleSelectionMade event:
+  - If "New": creates new Player and MapViewModel, logs "A new adventure begins!"
+  - If "Continue": loads Player from save or creates new, logs "Welcome back!"
+- Sets CurrentViewModel to MapViewModel after selection.
+- Keeps GlobalLog persistent.
+- TODO for intro cutscene on new game start.
