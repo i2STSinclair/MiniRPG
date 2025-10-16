@@ -1,15 +1,27 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Instructions:
-1. Build and run the SimpleRPG project.
-2. Verify:
-   • "Map" and "Battle" buttons switch views.
-   • MapView lists locations.
-   • Selecting a location + “Fight!” logs a start message.
-   • BattleView’s buttons append combat messages.
-3. If you encounter errors, let Copilot fix binding or namespace issues automatically.
-4. Add TODO comment placeholders at top of MainWindow.xaml:
-   <!-- TODO: Add background music, player sprite, enemy sprite, and location art -->
+Modify BattleViewModel.cs.
+
+Requirements:
+• Add integer properties:
+   - PlayerHP (default 30)
+   - EnemyHP (default 20)
+   - CurrentEnemy (string)
+• Add bool IsBattleOver
+• Update AttackCommand:
+   1. int dmg = GameService.CalculateDamage();
+   2. EnemyHP -= dmg;
+   3. Append $"You strike {CurrentEnemy} for {dmg} damage! (Enemy HP: {EnemyHP})"
+   4. If EnemyHP <= 0 => Append "You defeated the enemy!" and set IsBattleOver = true.
+   5. Else call EnemyAttack().
+• Create private method EnemyAttack():
+   - int dmg = GameService.CalculateDamage() / 2;
+   - PlayerHP -= dmg;
+   - Append $"{CurrentEnemy} attacks you for {dmg} damage! (Your HP: {PlayerHP})"
+   - If PlayerHP <= 0 => Append "You were defeated!" and set IsBattleOver = true.
+• DefendCommand reduces next incoming damage by 50%.
+• RunCommand ends battle and appends "You escaped safely."
+• Add TODO comment: // Later: Replace integers with full Stat objects for scaling difficulty
 
 
 ---

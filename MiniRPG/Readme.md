@@ -100,6 +100,17 @@
 
 ---
 
+## BattleViewModel Battle Logic Added
+
+- Added PlayerHP (default 30), EnemyHP (default 20), CurrentEnemy, and IsBattleOver properties.
+- AttackCommand now deals damage, updates HP, logs results, and checks for victory/defeat.
+- DefendCommand reduces next incoming damage by 50%.
+- RunCommand ends battle and logs escape.
+- EnemyAttack method handles enemy turn and defeat logic.
+- Added TODO for future Stat object implementation.
+
+---
+
 ## MainWindow MVVM Binding and DataTemplates (Fixed Namespaces)
 
 - Set DataContext = new MainViewModel() in MainWindow.xaml.cs constructor.
