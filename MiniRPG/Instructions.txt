@@ -1,17 +1,16 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Update MapViewModel and MainViewModel.
+Create Player.cs inside Models folder.
 
 Requirements:
-• In MapViewModel, modify StartBattleCommand to raise an event or callback when executed, e.g. OnStartBattle(string location).
-• In MainViewModel, subscribe to that event.
-• When triggered:
-   - Create a new BattleViewModel()
-   - Optionally pass the selected location name or seed to it
-   - Set CurrentViewModel = that BattleViewModel
-   - AddLog($"Entering battle at {location}")
-• Add TODO: // Later - fade transition and music change between map and battle
-
+• Properties:
+   - Name (string)
+   - HP (int)
+   - MaxHP (int)
+   - Attack (int)
+   - Defense (int)
+• Constructor sets defaults (HP = 30, Attack = 5, Defense = 2)
+• Add TODO: // Future - include inventory, experience, and leveling system
 
 ---
 

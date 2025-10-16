@@ -47,7 +47,16 @@ namespace MiniRPG.ViewModels
 
         private void ShowMap()
         {
-            CurrentViewModel = new MapViewModel(GlobalLog);
+            var mapVM = new MapViewModel(GlobalLog);
+            mapVM.OnStartBattle += location =>
+            {
+                var battleVM = new BattleViewModel(GlobalLog);
+                // Optionally pass location to BattleViewModel here
+                CurrentViewModel = battleVM;
+                AddLog($"Entering battle at {location}");
+                // TODO: Later - fade transition and music change between map and battle
+            };
+            CurrentViewModel = mapVM;
             AddLog("Switched to MapView");
             // Future: Insert transition/animation logic here for MapView
         }

@@ -157,4 +157,12 @@
 - Kept Attack/Defend/Run buttons and CombatLog box.
 - Added TODO comments for animated health bars, pixel-art overlays, and player/enemy portraits.
 
+---
+
+## MapViewModel and MainViewModel Event Integration
+
+- MapViewModel now raises an OnStartBattle event when StartBattleCommand is executed.
+- MainViewModel subscribes to OnStartBattle, creates a new BattleViewModel, sets CurrentViewModel, and logs entry.
+- TODO added for fade transition and music change between map and battle.
+
 This line is kept as requested.

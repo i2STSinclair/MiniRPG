@@ -1,3 +1,4 @@
+using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows.Input;
@@ -26,6 +27,9 @@ namespace MiniRPG.ViewModels
         public ICommand StartBattleCommand { get; }
         private ObservableCollection<string> _globalLog;
 
+        // Event/callback for starting battle
+        public event Action<string>? OnStartBattle;
+
         public MapViewModel(ObservableCollection<string> globalLog)
         {
             _globalLog = globalLog;
@@ -43,6 +47,7 @@ namespace MiniRPG.ViewModels
             var msg = $"Starting battle at [{SelectedLocation}]";
             Debug.WriteLine(msg);
             _globalLog.Add(msg);
+            OnStartBattle?.Invoke(SelectedLocation ?? "Unknown");
             // TODO: In future, connect to BattleViewModel and load enemy data
         }
     }
