@@ -250,4 +250,14 @@
   - <!-- TODO: Add save system -->
   - <!-- TODO: Add inventory and level-up after victory -->
 
-This line is kept as requested.
+---
+
+## Player Leveling System Added
+
+- Player.cs now includes:
+  - int Level (default 1)
+  - int Experience (default 0)
+  - int ExperienceToNextLevel (default 10)
+  - GainExperience(int amount) method for experience and level-up logic.
+  - Level-up increases stats and restores HP.
+  - TODO for future level-up animation, ability points, and save to file.

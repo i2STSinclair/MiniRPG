@@ -23,6 +23,27 @@ namespace MiniRPG.Models
             set { _maxHP = value; OnPropertyChanged(); }
         }
 
+        private int _level = 1;
+        public int Level
+        {
+            get => _level;
+            set { _level = value; OnPropertyChanged(); }
+        }
+
+        private int _experience = 0;
+        public int Experience
+        {
+            get => _experience;
+            set { _experience = value; OnPropertyChanged(); }
+        }
+
+        private int _experienceToNextLevel = 10;
+        public int ExperienceToNextLevel
+        {
+            get => _experienceToNextLevel;
+            set { _experienceToNextLevel = value; OnPropertyChanged(); }
+        }
+
         public int Attack { get; set; }
         public int Defense { get; set; }
 
@@ -33,7 +54,29 @@ namespace MiniRPG.Models
             HP = MaxHP;
             Attack = 5;
             Defense = 2;
+            Level = 1;
+            Experience = 0;
+            ExperienceToNextLevel = 10;
             // TODO: Future - include inventory, experience, and leveling system
+        }
+
+        public bool GainExperience(int amount)
+        {
+            Experience += amount;
+            bool leveledUp = false;
+            while (Experience >= ExperienceToNextLevel)
+            {
+                Level++;
+                Experience -= ExperienceToNextLevel;
+                ExperienceToNextLevel = (int)(ExperienceToNextLevel * 1.5);
+                MaxHP += 5;
+                Attack += 1;
+                Defense += 1;
+                HP = MaxHP;
+                leveledUp = true;
+                // TODO: Later - play level-up animation, add ability points, and save to file
+            }
+            return leveledUp;
         }
     }
 }

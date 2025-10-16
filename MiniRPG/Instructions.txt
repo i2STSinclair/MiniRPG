@@ -1,16 +1,25 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Testing checklist:
-1. Launch SimpleRPG.
-2. Navigate to MapView.
-3. Select a location and click "Fight!".
-4. Attack until you win or lose.
-5. Observe overlay text ("Victory!" / "Defeat!") when battle ends.
-6. Click "Return to Map" to go back.
-7. Verify the log persists and new battles can start.
-8. Add TODO placeholders:
-   <!-- TODO: Add save system -->
-   <!-- TODO: Add inventory and level-up after victory -->
+Modify Player.cs.
+
+Requirements:
+• Add properties:
+   - int Level (default 1)
+   - int Experience (default 0)
+   - int ExperienceToNextLevel (default 10)
+• Add method GainExperience(int amount):
+   - Experience += amount
+   - If Experience >= ExperienceToNextLevel:
+       * Level++
+       * Experience -= ExperienceToNextLevel
+       * ExperienceToNextLevel = (int)(ExperienceToNextLevel * 1.5)
+       * MaxHP += 5
+       * Attack += 1
+       * Defense += 1
+       * HP = MaxHP
+   - Return true if level-up occurred, false otherwise.
+• Add TODO: // Later - play level-up animation, add ability points, and save to file
+
 
 ---
 
