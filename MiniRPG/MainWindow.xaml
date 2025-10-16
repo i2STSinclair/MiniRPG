@@ -10,6 +10,9 @@
 <!-- TODO: Add background art per location -->
 <!-- TODO: Add music/audio triggers when battle starts -->
 <!-- TODO: Later SceneManager or Animation layer -->
+<!-- TODO: Encrypt save file -->
+<!-- TODO: Add multiple save slots -->
+<!-- TODO: Add "Continue" option on main menu -->
 <Window x:Class="MiniRPG.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"

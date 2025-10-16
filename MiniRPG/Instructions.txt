@@ -1,15 +1,15 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Modify MapViewModel.cs.
-
-Requirements:
-• Add property bool IsSaveConfirmed with OnPropertyChanged.
-• In RestCommand or when Save is invoked, set IsSaveConfirmed = true.
-• Create async method HideSaveConfirmation():
-   - await Task.Delay(2000);
-   - IsSaveConfirmed = false;
-• Call HideSaveConfirmation() after setting confirmation.
-• Add TODO: // Later - use animation system for this message
+Testing checklist:
+1. Run the game, level up, rest, and click "Save Game".
+2. Close the application.
+3. Reopen it — verify player stats and level are loaded correctly.
+4. Fight another battle to confirm autosave works.
+5. Observe "Game Saved!" message.
+6. Add TODO placeholders:
+   <!-- TODO: Encrypt save file -->
+   <!-- TODO: Add multiple save slots -->
+   <!-- TODO: Add "Continue" option on main menu -->
 
 ---
 

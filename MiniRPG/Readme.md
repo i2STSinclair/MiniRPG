@@ -385,3 +385,12 @@
 - IsSaveConfirmed property now set in Rest and Save actions.
 - Added async HideSaveConfirmation() method to hide message after 2 seconds.
 - TODO for future animation system for save confirmation message.
+
+---
+
+## Final Save/Load & Main Menu TODOs Added
+
+- Added TODO placeholders to MainWindow.xaml:
+  - <!-- TODO: Encrypt save file -->
+  - <!-- TODO: Add multiple save slots -->
+  - <!-- TODO: Add "Continue" option on main menu -->
