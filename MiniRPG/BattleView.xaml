@@ -67,7 +67,12 @@
 
         <!-- Bottom: Combat log with Border -->
         <Border Grid.Row="2" Margin="8" BorderBrush="#444466" BorderThickness="2" CornerRadius="6">
-            <TextBox Name="CombatLogTextBox" Text="{Binding CombatLog}" IsReadOnly="True" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" FontFamily="Consolas" FontSize="13" Background="#1E1E2A" Foreground="White" />
+            <ListBox Name="CombatLogListBox"
+                     ItemsSource="{Binding CombatLog}"
+                     FontFamily="Consolas"
+                     FontSize="13"
+                     Background="#1E1E2A" Foreground="White"
+                     IsHitTestVisible="False" />
         </Border>
     </Grid>
 </UserControl>
