@@ -1,13 +1,28 @@
+using MiniRPG.ViewModels;
+
 namespace MiniRPG.Models
 {
     /// <summary>
     /// Represents the player character.
     /// </summary>
-    public class Player
+    public class Player : BaseViewModel
     {
         public string Name { get; set; }
-        public int HP { get; set; }
-        public int MaxHP { get; set; }
+
+        private int _hp;
+        public int HP
+        {
+            get => _hp;
+            set { _hp = value; OnPropertyChanged(); }
+        }
+
+        private int _maxHP;
+        public int MaxHP
+        {
+            get => _maxHP;
+            set { _maxHP = value; OnPropertyChanged(); }
+        }
+
         public int Attack { get; set; }
         public int Defense { get; set; }
 
