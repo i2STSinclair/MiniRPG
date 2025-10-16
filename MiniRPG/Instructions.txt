@@ -1,15 +1,13 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Create AudioService.cs in the Services folder.
+Modify MainViewModel.cs.
 
 Requirements:
-• Create static class AudioService.
-• Add static methods:
-   - PlayTitleTheme()
-   - PlayMapTheme()
-   - PlayBattleTheme()
-• Use System.Media.SoundPlayer with placeholder .wav files (check existence before playing).
-• Add TODO: // Replace with cross-fade audio engine later.
+• When showing TitleViewModel, call AudioService.PlayTitleTheme()
+• When switching to MapViewModel, call AudioService.PlayMapTheme()
+• When switching to BattleViewModel, call AudioService.PlayBattleTheme()
+• Use try/catch to prevent exceptions if audio files missing.
+• Add TODO: // Replace with smooth fade transitions between tracks
 
 ---
 

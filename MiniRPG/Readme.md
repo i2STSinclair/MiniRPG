@@ -441,3 +441,13 @@
 - Provides PlayTitleTheme, PlayMapTheme, and PlayBattleTheme methods using System.Media.SoundPlayer and placeholder .wav files.
 - Checks file existence before playing.
 - TODO for cross-fade audio engine.
+
+---
+
+## MainViewModel AudioService Integration
+
+- Calls AudioService.PlayTitleTheme() when showing TitleViewModel.
+- Calls AudioService.PlayMapTheme() when switching to MapViewModel.
+- Calls AudioService.PlayBattleTheme() when switching to BattleViewModel.
+- Uses try/catch to prevent exceptions if audio files are missing.
+- TODO for smooth fade transitions between tracks.

@@ -41,6 +41,7 @@ namespace MiniRPG.ViewModels
             var titleVM = new TitleViewModel();
             titleVM.TitleSelectionMade += OnTitleSelectionMade;
             CurrentViewModel = titleVM;
+            try { AudioService.PlayTitleTheme(); } catch { }
 
             ShowMapCommand = new RelayCommand(_ => ShowMap());
             ShowBattleCommand = new RelayCommand(_ => ShowBattle());
@@ -54,6 +55,7 @@ namespace MiniRPG.ViewModels
                 CurrentPlayer = new Player();
                 var mapVM = new MapViewModel(GlobalLog, CurrentPlayer);
                 CurrentViewModel = mapVM;
+                try { AudioService.PlayMapTheme(); } catch { }
                 AddLog("A new adventure begins!");
                 // TODO: Add intro cutscene for new game start
             }
@@ -63,6 +65,7 @@ namespace MiniRPG.ViewModels
                 CurrentPlayer = loadedPlayer ?? new Player();
                 var mapVM = new MapViewModel(GlobalLog, CurrentPlayer);
                 CurrentViewModel = mapVM;
+                try { AudioService.PlayMapTheme(); } catch { }
                 AddLog("Welcome back!");
             }
         }
@@ -91,10 +94,12 @@ namespace MiniRPG.ViewModels
                     ShowMap();
                 };
                 CurrentViewModel = battleVM;
+                try { AudioService.PlayBattleTheme(); } catch { }
                 AddLog($"Entering battle at {location}");
                 // TODO: Later - fade transition and music change between map and battle
             };
             CurrentViewModel = mapVM;
+            try { AudioService.PlayMapTheme(); } catch { }
             AddLog("Switched to MapView");
             // Future: Insert transition/animation logic here for MapView
         }
@@ -111,11 +116,14 @@ namespace MiniRPG.ViewModels
                 ShowMap();
             };
             CurrentViewModel = battleVM;
+            try { AudioService.PlayBattleTheme(); } catch { }
             AddLog("Switched to BattleView");
             // Future: Insert transition/animation logic here for BattleView
         }
         // TODO: Add intro cutscene for new game start
+        // TODO: Add currency, inventory, and gear tabs next
         // TODO: Later - add save/load player data to file system
         // TODO: Later - trigger auto-save after each battle or major event
+        // TODO: Replace with smooth fade transitions between tracks
     }
 }
