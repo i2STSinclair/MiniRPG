@@ -517,3 +517,17 @@
 - Displays each item's Name and Type; shows Description for selected item.
 - Added SelectedInventoryItem property to MapViewModel for selection binding.
 - TODOs for pixel-art inventory icons and category tabs.
+
+---
+
+## MapViewModel: UseItemCommand Added
+
+- Added UseItemCommand (RelayCommand) to MapViewModel.
+- Command accepts an Item as parameter.
+- When executed:
+  - If Item.Type == "Consumable" and Item.Name == "Potion":
+    - Sets Player.HP = Math.Min(Player.MaxHP, Player.HP + 10).
+    - Removes the item from Player.Inventory.
+    - Logs "You used a Potion and recovered 10 HP." to GlobalLog.
+  - Otherwise, logs "That item cannot be used now." to GlobalLog.
+- Added TODO comment for future targeting and status effects logic.

@@ -37,6 +37,7 @@ namespace MiniRPG.ViewModels
         public ICommand StartBattleCommand { get; }
         public ICommand RestCommand { get; }
         public ICommand SaveCommand { get; }
+        public ICommand UseItemCommand { get; }
         private ObservableCollection<string> _globalLog;
 
         private bool _isSaveConfirmed;
@@ -64,6 +65,7 @@ namespace MiniRPG.ViewModels
             StartBattleCommand = new RelayCommand(_ => StartBattle());
             RestCommand = new RelayCommand(_ => Rest());
             SaveCommand = new RelayCommand(async _ => await SaveGame());
+            UseItemCommand = new RelayCommand(param => UseItem(param as Item));
         }
 
         private void StartBattle()
@@ -98,6 +100,28 @@ namespace MiniRPG.ViewModels
             await Task.Delay(2000);
             IsSaveConfirmed = false;
             // Later - use animation system for this message
+        }
+
+        private void UseItem(Item? item)
+        {
+            if (item == null)
+            {
+                _globalLog.Add("No item selected.");
+                return;
+            }
+            if (item.Type == "Consumable" && item.Name == "Potion")
+            {
+                int oldHP = Player.HP;
+                Player.HP = Math.Min(Player.MaxHP, Player.HP + 10);
+                Player.Inventory.Remove(item);
+                OnPropertyChanged(nameof(Player));
+                _globalLog.Add("You used a Potion and recovered 10 HP.");
+            }
+            else
+            {
+                _globalLog.Add("That item cannot be used now.");
+            }
+            // TODO: Add targeting and status effects later
         }
     }
 }

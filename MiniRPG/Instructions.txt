@@ -1,15 +1,17 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Edit MapView.xaml.
+Modify MapViewModel.cs.
 
 Requirements:
-• Add an Expander or ListBox titled "Inventory".
-• Bind ItemsSource to Player.Inventory.
-• Display each item’s Name and Type.
-• When selected, show Description in a TextBlock below.
-• Add TODO:
-   <!-- TODO: Replace with pixel-art inventory icons -->
-   <!-- TODO: Add categories (Consumables, Materials, etc.) -->
+• Add RelayCommand named UseItemCommand.
+• Command parameter: selected Item.
+• When executed:
+   - If Item.Type == "Consumable" and Item.Name == "Potion":
+       * Player.HP = Math.Min(Player.MaxHP, Player.HP + 10);
+       * Remove item from Inventory.
+       * Log "You used a Potion and recovered 10 HP."
+   - Else Log "That item cannot be used now."
+• Add TODO: // Add targeting and status effects later
 
 ---
 
