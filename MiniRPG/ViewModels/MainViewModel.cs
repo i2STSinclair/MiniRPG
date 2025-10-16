@@ -56,7 +56,7 @@ namespace MiniRPG.ViewModels
 
         private void ShowMap()
         {
-            var mapVM = new MapViewModel(CurrentPlayer);
+            var mapVM = new MapViewModel(GlobalLog, CurrentPlayer);
             mapVM.OnStartBattle += async location =>
             {
                 var battleVM = new BattleViewModel(GlobalLog, CurrentPlayer);
