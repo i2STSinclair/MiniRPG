@@ -482,3 +482,12 @@
 - TODO for item effects and rarity expansion.
 
 ---
+
+## Player Inventory Support Added
+
+- Player now has ObservableCollection<Item> Inventory property.
+- AddItem(Item item) method adds to inventory and logs to Debug.
+- Inventory is serializable with SaveLoadService.
+- TODO for inventory capacity and sorting.
+
+---

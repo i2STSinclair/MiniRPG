@@ -1,18 +1,14 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Create Item.cs in the Models folder.
+Modify Player.cs.
 
 Requirements:
-• Define a public class Item with properties:
-   - string Name
-   - string Description
-   - string Type (e.g. "Consumable", "Material", "Weapon")
-   - int Value (for gold or sell price)
-• Add constructor for quick setup.
-• Add static method GetSampleItems() returning a few basic items:
-   new Item("Potion", "Restores 10 HP", "Consumable", 25),
-   new Item("Slime Goo", "Sticky residue from a defeated slime.", "Material", 5)
-• Add TODO: // Expand with item effects and rarity later
+• Add ObservableCollection<Item> Inventory { get; set; } = new();
+• Add method AddItem(Item item):
+   - Inventory.Add(item);
+   - Optionally Debug.WriteLine($"{item.Name} added to inventory.")
+• Ensure Inventory is serialized properly in SaveLoadService (JsonSerializer supports ObservableCollection automatically).
+• Add TODO: // Add inventory capacity and sorting later
 
 ---
 

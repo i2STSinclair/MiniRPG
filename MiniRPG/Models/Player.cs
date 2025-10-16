@@ -1,3 +1,5 @@
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using MiniRPG.ViewModels;
 
 namespace MiniRPG.Models
@@ -47,6 +49,8 @@ namespace MiniRPG.Models
         public int Attack { get; set; }
         public int Defense { get; set; }
 
+        public ObservableCollection<Item> Inventory { get; set; } = new();
+
         public Player(string name = "Hero")
         {
             Name = name;
@@ -77,6 +81,13 @@ namespace MiniRPG.Models
                 // TODO: Later - play level-up animation, add ability points, and save to file
             }
             return leveledUp;
+        }
+
+        public void AddItem(Item item)
+        {
+            Inventory.Add(item);
+            Debug.WriteLine($"{item.Name} added to inventory.");
+            // TODO: // Add inventory capacity and sorting later
         }
     }
 }
