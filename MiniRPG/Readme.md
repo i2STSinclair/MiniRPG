@@ -100,4 +100,12 @@
 - Bound ContentControl to CurrentViewModel for view switching.
 - Added comments for future fade transitions between views.
 
+---
+
+## GlobalLog Integration and Log Binding
+
+- MainViewModel now includes ObservableCollection<string> GlobalLog and AddLog(string message) method.
+- MapViewModel and BattleViewModel receive GlobalLog reference and append messages to it.
+- MainWindow.xaml bottom log is now a ListBox bound to GlobalLog, read-only, multi-line, with a comment for future pixel-art styling.
+
 This line is kept as requested.

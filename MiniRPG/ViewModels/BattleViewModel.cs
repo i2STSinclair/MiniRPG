@@ -12,6 +12,7 @@ namespace MiniRPG.ViewModels
         private readonly Random _random = new();
 
         public ObservableCollection<string> CombatLog { get; } = new();
+        private ObservableCollection<string> _globalLog;
 
         public ICommand AttackCommand { get; }
         public ICommand DefendCommand { get; }
@@ -20,8 +21,9 @@ namespace MiniRPG.ViewModels
         // TODO: Add player/enemy HP tracking
         // TODO: Add enemy AI logic
 
-        public BattleViewModel()
+        public BattleViewModel(ObservableCollection<string> globalLog)
         {
+            _globalLog = globalLog;
             AttackCommand = new RelayCommand(_ => Attack());
             DefendCommand = new RelayCommand(_ => Defend());
             RunCommand = new RelayCommand(_ => Run());
@@ -30,21 +32,27 @@ namespace MiniRPG.ViewModels
         private void Attack()
         {
             int damage = _random.Next(3, 11); // 3-10 damage
-            CombatLog.Add($"You attack the enemy for {damage} damage!");
+            var msg = $"You attack the enemy for {damage} damage!";
+            CombatLog.Add(msg);
+            _globalLog.Add(msg);
             // TODO: Update enemy HP and check for defeat
         }
 
         private void Defend()
         {
             int block = _random.Next(1, 6); // 1-5 block
-            CombatLog.Add($"You defend and block {block} damage!");
+            var msg = $"You defend and block {block} damage!";
+            CombatLog.Add(msg);
+            _globalLog.Add(msg);
             // TODO: Reduce incoming damage, update HP
         }
 
         private void Run()
         {
             bool success = _random.NextDouble() > 0.5;
-            CombatLog.Add(success ? "You successfully ran away!" : "You failed to escape!");
+            var msg = success ? "You successfully ran away!" : "You failed to escape!";
+            CombatLog.Add(msg);
+            _globalLog.Add(msg);
             // TODO: Handle run success/failure logic
         }
     }

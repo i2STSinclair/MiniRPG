@@ -24,9 +24,11 @@ namespace MiniRPG.ViewModels
         }
 
         public ICommand StartBattleCommand { get; }
+        private ObservableCollection<string> _globalLog;
 
-        public MapViewModel()
+        public MapViewModel(ObservableCollection<string> globalLog)
         {
+            _globalLog = globalLog;
             Locations = new ObservableCollection<string>
             {
                 "Forest",
@@ -38,7 +40,9 @@ namespace MiniRPG.ViewModels
 
         private void StartBattle()
         {
-            Debug.WriteLine($"Starting battle at [{SelectedLocation}]");
+            var msg = $"Starting battle at [{SelectedLocation}]";
+            Debug.WriteLine(msg);
+            _globalLog.Add(msg);
             // TODO: In future, connect to BattleViewModel and load enemy data
         }
     }

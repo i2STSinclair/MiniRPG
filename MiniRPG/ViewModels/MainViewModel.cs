@@ -1,9 +1,11 @@
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 
 namespace MiniRPG.ViewModels
 {
     /// <summary>
-    /// MainViewModel manages the current view and commands for switching views.
+    /// MainViewModel manages the current view, global log, and commands for switching views.
     /// </summary>
     public class MainViewModel : BaseViewModel
     {
@@ -22,6 +24,8 @@ namespace MiniRPG.ViewModels
             }
         }
 
+        public ObservableCollection<string> GlobalLog { get; } = new();
+
         public ICommand ShowMapCommand { get; }
         public ICommand ShowBattleCommand { get; }
 
@@ -29,18 +33,29 @@ namespace MiniRPG.ViewModels
         {
             ShowMapCommand = new RelayCommand(_ => ShowMap());
             ShowBattleCommand = new RelayCommand(_ => ShowBattle());
-            CurrentViewModel = new MapViewModel(); // Default view
+            ShowMap(); // Default view
         }
+
+        public void AddLog(string message)
+        {
+            GlobalLog.Add(message);
+            OnPropertyChanged(nameof(GlobalLog));
+            OnPropertyChanged(nameof(CombinedLog));
+        }
+
+        public string CombinedLog => string.Join("\n", GlobalLog);
 
         private void ShowMap()
         {
-            CurrentViewModel = new MapViewModel();
+            CurrentViewModel = new MapViewModel(GlobalLog);
+            AddLog("Switched to MapView");
             // Future: Insert transition/animation logic here for MapView
         }
 
         private void ShowBattle()
         {
-            CurrentViewModel = new BattleViewModel();
+            CurrentViewModel = new BattleViewModel(GlobalLog);
+            AddLog("Switched to BattleView");
             // Future: Insert transition/animation logic here for BattleView
         }
     }

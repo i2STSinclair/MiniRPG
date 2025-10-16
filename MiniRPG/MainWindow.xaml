@@ -34,16 +34,14 @@
         <!-- Main ContentControl -->
         <ContentControl Grid.Row="1" Name="MainContentControl" Content="{Binding CurrentViewModel}" />
 
-        <!-- Bottom TextBox for logs/messages -->
-        <TextBox Grid.Row="2" Name="CombatLogTextBox"
-                 IsReadOnly="True"
-                 AcceptsReturn="True"
-                 VerticalScrollBarVisibility="Auto"
-                 TextWrapping="Wrap"
+        <!-- Bottom Log ListBox -->
+        <ListBox Grid.Row="2" Name="GlobalLogListBox"
+                 ItemsSource="{Binding GlobalLog}"
                  FontFamily="Consolas"
                  FontSize="14"
-                 Background="#FF1E1E1E" Foreground="White">
-            <!-- Art assets for log background can be inserted here -->
-        </TextBox>
+                 Background="#FF1E1E1E" Foreground="White"
+                 IsHitTestVisible="False">
+            <!-- TODO: Style log box with pixel-art frame -->
+        </ListBox>
     </Grid>
 </Window>

@@ -1,22 +1,14 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Open MainWindow.xaml.cs and update the code-behind.
+Modify MainViewModel.cs to include:
+• ObservableCollection<string> GlobalLog
+• Method AddLog(string message)
+• Whenever switching between MapViewModel and BattleViewModel, pass a reference to GlobalLog so both can append messages.
 
-Requirements:
-• Set DataContext = new MainViewModel() in the constructor after InitializeComponent().
-• Ensure that MainWindow.xaml’s ContentControl is bound to CurrentViewModel using DataTemplates for MapViewModel and BattleViewModel.
-• Add the DataTemplates in MainWindow.xaml within Window.Resources:
-
-    <DataTemplate DataType="{x:Type vm:MapViewModel}">
-        <v:MapView />
-    </DataTemplate>
-
-    <DataTemplate DataType="{x:Type vm:BattleViewModel}">
-        <v:BattleView />
-    </DataTemplate>
-
-• (Assume xmlns:vm="clr-namespace:SimpleRPG.ViewModels" and xmlns:v="clr-namespace:SimpleRPG.Views")
-• Comment clearly where to later add fade transitions between views.
+Update MainWindow.xaml:
+• Bind the bottom TextBox to ItemsSource="{Binding GlobalLog}" or use Text="{Binding CombinedLog}" if you prefer a concatenated string.
+• Make it read-only, multi-line, vertical scroll visible.
+• Add comment placeholder for styling later (<!-- TODO: Style log box with pixel-art frame -->)
 
 
 ---
