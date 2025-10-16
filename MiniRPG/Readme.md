@@ -299,3 +299,12 @@
 - MapViewModel now has a constructor accepting Player and exposes it for binding.
 - MainViewModel passes CurrentPlayer to MapViewModel for player info display.
 - Added TODOs for currency, inventory, and gear tabs next.
+
+---
+
+## MapView Rest Command Added
+
+- MapViewModel now includes RestCommand:
+  - Sets Player.HP to Player.MaxHP, notifies property changed, and logs recovery.
+- MapView.xaml adds a "Rest" button under player info, bound to RestCommand.
+- Added TODO for future inn scene and cost-based healing.

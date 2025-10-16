@@ -26,6 +26,7 @@ namespace MiniRPG.ViewModels
         }
 
         public ICommand StartBattleCommand { get; }
+        public ICommand RestCommand { get; }
         private ObservableCollection<string> _globalLog;
 
         public Player Player { get; }
@@ -44,6 +45,7 @@ namespace MiniRPG.ViewModels
                 "Ruins"
             };
             StartBattleCommand = new RelayCommand(_ => StartBattle());
+            RestCommand = new RelayCommand(_ => Rest());
         }
 
         public MapViewModel(Player player)
@@ -66,6 +68,14 @@ namespace MiniRPG.ViewModels
             _globalLog.Add(msg);
             OnStartBattle?.Invoke(SelectedLocation ?? "Unknown");
             // TODO: In future, connect to BattleViewModel and load enemy data
+        }
+
+        private void Rest()
+        {
+            Player.HP = Player.MaxHP;
+            OnPropertyChanged(nameof(Player));
+            _globalLog?.Add("You rest and recover all HP.");
+            // TODO: Replace with inn scene and cost-based healing later
         }
     }
 }

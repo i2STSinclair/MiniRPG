@@ -1,16 +1,19 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Modify MainViewModel.cs and MapViewModel.cs.
+Enhance MapViewModel and MapView.xaml.
 
-MainViewModel:
-• When initializing MapViewModel, pass CurrentPlayer.
+MapViewModel.cs:
+• Add RelayCommand named RestCommand
+• When executed:
+   - Player.HP = Player.MaxHP
+   - Notify property changed
+   - Append "You rest and recover all HP." to global log if available
 
-MapViewModel:
-• Add constructor MapViewModel(Player player)
-• Store reference to Player and expose it as public property
-• Update bindings so player info displays in MapView
-
-Add TODO: // Add currency, inventory, and gear tabs next
+MapView.xaml:
+• Add a Button labeled "Rest"
+• Bind to RestCommand
+• Place it under player info section
+• Add TODO: // Replace with inn scene and cost-based healing later
 
 ---
 
