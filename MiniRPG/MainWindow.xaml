@@ -18,6 +18,7 @@
         <Style TargetType="Button">
             <Setter Property="Margin" Value="5" />
             <Setter Property="Padding" Value="8,4" />
+            <Setter Property="Foreground" Value="White" />
         </Style>
         <DataTemplate DataType="{x:Type vm:MapViewModel}">
             <v:MapView />
@@ -35,25 +36,27 @@
         </Grid.RowDefinitions>
 
         <!-- Top MenuBar -->
-        <Menu Grid.Row="0" Name="MainMenuBar">
+        <Menu Grid.Row="0" Name="MainMenuBar" Foreground="White">
             <MenuItem Header="Map" Name="MapMenuButton" />
             <MenuItem Header="Battle" Name="BattleMenuButton" />
             <!-- Art assets for menu icons can be inserted here -->
         </Menu>
 
         <!-- Main ContentControl -->
-        <ContentControl Grid.Row="1" Name="MainContentControl" Content="{Binding CurrentViewModel}" />
+        <ContentControl Grid.Row="1" Name="MainContentControl" Content="{Binding CurrentViewModel}" Foreground="White" />
 
         <!-- Bottom Log ListBox with Border -->
         <Border Grid.Row="2" Margin="8" BorderBrush="#444466" BorderThickness="2" CornerRadius="6">
-            <ListBox Name="GlobalLogListBox"
-                     ItemsSource="{Binding GlobalLog}"
-                     FontFamily="Consolas"
-                     FontSize="14"
-                     Background="#1E1E2A" Foreground="White"
-                     IsHitTestVisible="False">
-                <!-- TODO: Style log box with pixel-art frame -->
-            </ListBox>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <ListBox Name="GlobalLogListBox"
+                         ItemsSource="{Binding GlobalLog}"
+                         FontFamily="Consolas"
+                         FontSize="14"
+                         Background="#1E1E2A" Foreground="White"
+                         IsHitTestVisible="False">
+                    <!-- TODO: Style log box with pixel-art frame -->
+                </ListBox>
+            </ScrollViewer>
         </Border>
     </Grid>
 </Window>

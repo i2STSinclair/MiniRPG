@@ -45,17 +45,17 @@
         </Grid>
 
         <!-- Top: Battle status -->
-        <TextBlock Grid.Row="0" Name="BattleStatusText" Text="Battle in Progress" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,10" />
+        <TextBlock Grid.Row="0" Name="BattleStatusText" Text="Battle in Progress" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White" />
 
         <!-- HP Bars and Portraits -->
         <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,10">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
                 <StackPanel Margin="0,0,20,0">
-                    <TextBlock Text="Player HP" FontWeight="Bold" HorizontalAlignment="Center" />
+                    <TextBlock Text="Player HP" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White" />
                     <ProgressBar Name="PlayerHPBar" Value="{Binding Player.HP}" Maximum="{Binding Player.MaxHP}" Height="18" Width="120" />
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock Text="Enemy HP" FontWeight="Bold" HorizontalAlignment="Center" />
+                    <TextBlock Text="Enemy HP" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White" />
                     <ProgressBar Name="EnemyHPBar" Value="{Binding EnemyHP}" Maximum="20" Height="18" Width="120" />
                 </StackPanel>
             </StackPanel>
@@ -67,12 +67,14 @@
 
         <!-- Bottom: Combat log with Border -->
         <Border Grid.Row="2" Margin="8" BorderBrush="#444466" BorderThickness="2" CornerRadius="6">
-            <ListBox Name="CombatLogListBox"
-                     ItemsSource="{Binding CombatLog}"
-                     FontFamily="Consolas"
-                     FontSize="13"
-                     Background="#1E1E2A" Foreground="White"
-                     IsHitTestVisible="False" />
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <ListBox Name="CombatLogListBox"
+                         ItemsSource="{Binding CombatLog}"
+                         FontFamily="Consolas"
+                         FontSize="13"
+                         Background="#1E1E2A" Foreground="White"
+                         IsHitTestVisible="False" />
+            </ScrollViewer>
         </Border>
     </Grid>
 </UserControl>
