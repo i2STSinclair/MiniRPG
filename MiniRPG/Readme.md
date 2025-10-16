@@ -184,4 +184,13 @@
 - Bound PlayerHPBar in BattleView.xaml to Player.HP and Maximum to Player.MaxHP.
 - Added TODO for persisting Player object between battles.
 
+---
+
+## UI Tidy: MainWindow.xaml & BattleView.xaml
+
+- Added light background color (#222233) to both MainWindow and BattleView.
+- Styled all Buttons with Margin="5" and Padding="8,4".
+- Added Border around CombatLog areas for both views.
+- Added TODO comment placeholders for art assets, music/audio triggers, and future SceneManager/Animation layer.
+
 This line is kept as requested.

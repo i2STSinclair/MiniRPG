@@ -1,16 +1,16 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Modify BattleViewModel.cs to use Player model.
+Tidy up MainWindow.xaml and BattleView.xaml.
 
 Requirements:
-• Add property Player of type Player.
-• In constructor, initialize Player = new Player().
-• Replace PlayerHP references with Player.HP.
-• When damage taken:
-   - Subtract from Player.HP
-   - If Player.HP <= 0, append "You were defeated!"
-• Bind ProgressBar in BattleView.xaml to Player.HP and set Maximum to Player.MaxHP.
-• Add TODO: // Later - persist Player object between battles
+• Add light background color (for example: #222233)
+• Style Buttons with Margin="5" and Padding="8,4"
+• Add Border around CombatLog area
+• Add comment placeholders for replacing with art assets:
+   <!-- TODO: Add background art per location -->
+   <!-- TODO: Add music/audio triggers when battle starts -->
+• Add TODO comment for later SceneManager or Animation layer
+
 
 ---
 
