@@ -93,12 +93,17 @@ namespace MiniRPG.ViewModels
                     CombatLog.Add($"You reached level {Player.Level}! Your stats increased.");
                     _globalLog.Add($"You reached level {Player.Level}! Your stats increased.");
                 }
+                // Save progress after victory
+                SaveLoadService.SavePlayer(Player);
+                CombatLog.Add("Progress saved!");
+                _globalLog.Add("Progress saved!");
                 IsBattleOver = true;
                 _canAct = false;
                 BattleResult = "Victory";
                 UpdateCommands();
                 BattleEnded?.Invoke("Victory");
                 // TODO: Later - include loot drops and enemy-specific EXP scaling
+                // TODO: Later - add autosave indicator animation on screen
             }
             else
             {

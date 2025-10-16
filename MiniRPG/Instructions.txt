@@ -1,13 +1,12 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Edit MapView.xaml.
+Modify BattleViewModel.cs.
 
 Requirements:
-• Add a Button labeled "Save Game"
-• Bind it to the SaveCommand in MainViewModel (through DataContext proxy or event command)
-• Place it near the “Rest” button.
-• Add TODO comment:
-   <!-- TODO: Replace with auto-save indicator and custom UI slot menu -->
+• When battle ends in victory:
+   - Call SaveLoadService.SavePlayer(Player)
+   - Append "Progress saved!" to CombatLog.
+• Add TODO: // Later - add autosave indicator animation on screen
 
 ---
 

@@ -351,3 +351,12 @@
 
 - Added 'Save Game' button next to 'Rest' in MapView.xaml, bound to SaveCommand in MainViewModel using RelativeSource.
 - Added TODO for auto-save indicator and custom UI slot menu.
+
+---
+
+## BattleViewModel Autosave on Victory
+
+- When battle ends in victory:
+  - Calls SaveLoadService.SavePlayer(Player).
+  - Appends "Progress saved!" to CombatLog and GlobalLog.
+  - TODO for autosave indicator animation on screen.
