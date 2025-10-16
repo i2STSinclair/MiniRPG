@@ -75,4 +75,16 @@
   - All elements named and bound for later logic.
 - Updated BattleViewModel to implement CombatLog property and commands for Attack, Defend, Run.
 
+---
+
+## BattleViewModel Refactored
+
+- Refactored BattleViewModel in ViewModels folder:
+  - Inherits from BaseViewModel.
+  - Adds ObservableCollection<string> CombatLog.
+  - Adds three RelayCommands: AttackCommand, DefendCommand, RunCommand.
+  - Each command adds a new line to CombatLog describing the action, with random damage/block values.
+  - Uses System.Random for simple randomization.
+  - Includes TODO comments for future HP tracking and enemy AI logic.
+
 This line is kept as requested.

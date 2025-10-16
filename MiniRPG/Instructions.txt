@@ -1,2 +1,16 @@
-﻿---
+﻿You are GitHub Copilot inside Visual Studio 2022.
+
+Create BattleViewModel.cs in the ViewModels folder.
+
+Requirements:
+• Inherit from BaseViewModel
+• Add ObservableCollection<string> CombatLog
+• Add three RelayCommands: AttackCommand, DefendCommand, RunCommand
+• Each command adds a new line to CombatLog describing what happened (for example: "You attack the enemy for 5 damage!")
+• Add simple randomization for damage values using System.Random
+• Include TODO comments for future HP tracking and enemy AI
+
+
+---
+
 After you finish, update the Readme.md file with the changes.
