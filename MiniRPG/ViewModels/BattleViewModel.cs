@@ -47,6 +47,9 @@ namespace MiniRPG.ViewModels
         // Later: Replace integers with full Stat objects for scaling difficulty
         // TODO: Later - persist Player object between battles
 
+        // Event for battle end
+        public event Action<string>? BattleEnded;
+
         public BattleViewModel(ObservableCollection<string> globalLog)
         {
             _globalLog = globalLog;
@@ -73,6 +76,7 @@ namespace MiniRPG.ViewModels
                 IsBattleOver = true;
                 _canAct = false;
                 UpdateCommands();
+                BattleEnded?.Invoke("Victory");
             }
             else
             {
@@ -97,6 +101,7 @@ namespace MiniRPG.ViewModels
             IsBattleOver = true;
             _canAct = false;
             UpdateCommands();
+            BattleEnded?.Invoke("Defeat"); // Treat run as defeat for now
         }
 
         private void EnemyAttack()
@@ -118,6 +123,7 @@ namespace MiniRPG.ViewModels
                 IsBattleOver = true;
                 _canAct = false;
                 UpdateCommands();
+                BattleEnded?.Invoke("Defeat");
             }
         }
 

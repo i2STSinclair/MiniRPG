@@ -1,16 +1,20 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Tidy up MainWindow.xaml and BattleView.xaml.
+Modify BattleViewModel.cs and MainViewModel.cs.
 
-Requirements:
-• Add light background color (for example: #222233)
-• Style Buttons with Margin="5" and Padding="8,4"
-• Add Border around CombatLog area
-• Add comment placeholders for replacing with art assets:
-   <!-- TODO: Add background art per location -->
-   <!-- TODO: Add music/audio triggers when battle starts -->
-• Add TODO comment for later SceneManager or Animation layer
+BattleViewModel.cs:
+• Add a new public event Action<string> BattleEnded;  // message can be "Victory" or "Defeat"
+• After checking if EnemyHP <= 0, call BattleEnded?.Invoke("Victory");
+• After checking if Player.HP <= 0, call BattleEnded?.Invoke("Defeat");
 
+MainViewModel.cs:
+• Subscribe to BattleEnded when creating BattleViewModel.
+• When triggered:
+   - AddLog($"Battle ended with result: {result}");
+   - Optionally wait 1 second (use async/await Task.Delay(1000))
+   - Switch CurrentViewModel back to new MapViewModel
+   - Keep the GlobalLog persistent
+• Add TODO comment: // Later, implement rewards and experience points after victory
 
 ---
 

@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
+using System.Threading.Tasks;
 
 namespace MiniRPG.ViewModels
 {
@@ -48,10 +49,17 @@ namespace MiniRPG.ViewModels
         private void ShowMap()
         {
             var mapVM = new MapViewModel(GlobalLog);
-            mapVM.OnStartBattle += location =>
+            mapVM.OnStartBattle += async location =>
             {
                 var battleVM = new BattleViewModel(GlobalLog);
                 // Optionally pass location to BattleViewModel here
+                battleVM.BattleEnded += async result =>
+                {
+                    AddLog($"Battle ended with result: {result}");
+                    // TODO: Later, implement rewards and experience points after victory
+                    await Task.Delay(1000);
+                    ShowMap();
+                };
                 CurrentViewModel = battleVM;
                 AddLog($"Entering battle at {location}");
                 // TODO: Later - fade transition and music change between map and battle
@@ -63,7 +71,15 @@ namespace MiniRPG.ViewModels
 
         private void ShowBattle()
         {
-            CurrentViewModel = new BattleViewModel(GlobalLog);
+            var battleVM = new BattleViewModel(GlobalLog);
+            battleVM.BattleEnded += async result =>
+            {
+                AddLog($"Battle ended with result: {result}");
+                // TODO: Later, implement rewards and experience points after victory
+                await Task.Delay(1000);
+                ShowMap();
+            };
+            CurrentViewModel = battleVM;
             AddLog("Switched to BattleView");
             // Future: Insert transition/animation logic here for BattleView
         }

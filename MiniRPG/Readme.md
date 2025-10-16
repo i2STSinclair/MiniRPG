@@ -193,4 +193,12 @@
 - Added Border around CombatLog areas for both views.
 - Added TODO comment placeholders for art assets, music/audio triggers, and future SceneManager/Animation layer.
 
+---
+
+## Battle End Event & MainViewModel Handling
+
+- BattleViewModel now exposes BattleEnded event, invoked with "Victory" or "Defeat".
+- MainViewModel subscribes to BattleEnded, logs result, waits 1 second, and switches back to MapViewModel.
+- TODO added for future rewards and experience points after victory.
+
 This line is kept as requested.
