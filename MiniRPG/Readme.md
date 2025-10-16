@@ -8,3 +8,13 @@
 - Added a bottom multi-line, read-only, scrollable TextBox for combat logs/messages.
 - Used proper Grid row definitions and named each control for clarity.
 - Commented XAML to indicate where images or art assets can be inserted.
+
+---
+
+## BaseViewModel Added
+
+- Created a new C# class named BaseViewModel in the ViewModels folder.
+- Implements INotifyPropertyChanged and provides a protected OnPropertyChanged(string propertyName) method.
+- Follows standard MVVM pattern for property change notification.
+
+This line is kept as requested.
