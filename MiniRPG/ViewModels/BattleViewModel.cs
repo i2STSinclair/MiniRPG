@@ -37,6 +37,13 @@ namespace MiniRPG.ViewModels
             set { _isBattleOver = value; OnPropertyChanged(); }
         }
 
+        private string _battleResult;
+        public string BattleResult
+        {
+            get => _battleResult;
+            set { _battleResult = value; OnPropertyChanged(); }
+        }
+
         private bool _canAct = true;
         private bool _defendNext = false;
 
@@ -57,6 +64,7 @@ namespace MiniRPG.ViewModels
             CurrentEnemy = GameService.GetRandomEnemy();
             EnemyHP = 20;
             IsBattleOver = false;
+            BattleResult = string.Empty;
             AttackCommand = new RelayCommand(_ => Attack(), _ => _canAct && !IsBattleOver);
             DefendCommand = new RelayCommand(_ => Defend(), _ => _canAct && !IsBattleOver);
             RunCommand = new RelayCommand(_ => Run(), _ => _canAct && !IsBattleOver);
@@ -75,6 +83,7 @@ namespace MiniRPG.ViewModels
                 _globalLog.Add("You defeated the enemy!");
                 IsBattleOver = true;
                 _canAct = false;
+                BattleResult = "Victory";
                 UpdateCommands();
                 BattleEnded?.Invoke("Victory");
             }
@@ -100,6 +109,7 @@ namespace MiniRPG.ViewModels
             _globalLog.Add(msg);
             IsBattleOver = true;
             _canAct = false;
+            BattleResult = "Defeat";
             UpdateCommands();
             BattleEnded?.Invoke("Defeat"); // Treat run as defeat for now
         }
@@ -122,6 +132,7 @@ namespace MiniRPG.ViewModels
                 _globalLog.Add("You were defeated!");
                 IsBattleOver = true;
                 _canAct = false;
+                BattleResult = "Defeat";
                 UpdateCommands();
                 BattleEnded?.Invoke("Defeat");
             }

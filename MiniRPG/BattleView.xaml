@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:MiniRPG"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="400">
     <!-- TODO: Add background art per location -->
@@ -10,12 +11,29 @@
     <!-- TODO: Replace ProgressBars with animated health bars or custom pixel-art overlay -->
     <!-- TODO: Insert Player/Enemy portraits here -->
     <!-- TODO: Later SceneManager or Animation layer -->
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+        <local:ResultToColorConverter x:Key="ResultToColor" />
+    </UserControl.Resources>
     <Grid Margin="10" Background="#222233">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="120" />
         </Grid.RowDefinitions>
+
+        <!-- Overlay for battle result -->
+        <!-- TODO: Replace overlay with animated fade-in/out scene transition -->
+        <!-- TODO: Replace static text with art-based "Victory" screen later -->
+        <Grid>
+            <TextBlock Text="{Binding BattleResult}"
+                       Visibility="{Binding IsBattleOver, Converter={StaticResource BoolToVis}}"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       FontSize="36" FontWeight="Bold"
+                       Foreground="{Binding BattleResult, Converter={StaticResource ResultToColor}}"
+                       TextAlignment="Center"
+                       Panel.ZIndex="99" />
+        </Grid>
 
         <!-- Top: Battle status -->
         <TextBlock Grid.Row="0" Name="BattleStatusText" Text="Battle in Progress" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,10" />

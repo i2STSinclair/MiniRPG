@@ -1,20 +1,15 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Modify BattleViewModel.cs and MainViewModel.cs.
+Open BattleView.xaml and add a basic overlay.
 
-BattleViewModel.cs:
-• Add a new public event Action<string> BattleEnded;  // message can be "Victory" or "Defeat"
-• After checking if EnemyHP <= 0, call BattleEnded?.Invoke("Victory");
-• After checking if Player.HP <= 0, call BattleEnded?.Invoke("Defeat");
-
-MainViewModel.cs:
-• Subscribe to BattleEnded when creating BattleViewModel.
-• When triggered:
-   - AddLog($"Battle ended with result: {result}");
-   - Optionally wait 1 second (use async/await Task.Delay(1000))
-   - Switch CurrentViewModel back to new MapViewModel
-   - Keep the GlobalLog persistent
-• Add TODO comment: // Later, implement rewards and experience points after victory
+Requirements:
+• Add a TextBlock centered over the UI (use a Grid with overlapping layers)
+• Bind its Text to a new BattleResult property in BattleViewModel
+• Use large bold font and color (e.g., LimeGreen for victory, Red for defeat)
+• Visibility bound to IsBattleOver (use BooleanToVisibilityConverter)
+• Add comments:
+   <!-- TODO: Replace overlay with animated fade-in/out scene transition -->
+   <!-- TODO: Replace static text with art-based "Victory" screen later -->
 
 ---
 

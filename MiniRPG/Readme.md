@@ -201,4 +201,13 @@
 - MainViewModel subscribes to BattleEnded, logs result, waits 1 second, and switches back to MapViewModel.
 - TODO added for future rewards and experience points after victory.
 
+---
+
+## BattleView Overlay for Result
+
+- Added BattleResult property to BattleViewModel, set to "Victory" or "Defeat" when battle ends.
+- BattleView.xaml now displays a centered overlay TextBlock bound to BattleResult, visible when IsBattleOver is true.
+- Overlay uses large bold font and color (LimeGreen for victory, Red for defeat) via ResultToColorConverter.
+- Added TODO comments for future animated transitions and art-based victory screens.
+
 This line is kept as requested.
