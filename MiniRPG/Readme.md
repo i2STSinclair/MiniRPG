@@ -63,4 +63,16 @@
   - When executed, logs "Starting battle at [SelectedLocation]" using Debug.WriteLine.
   - Added TODO comment for future connection to BattleViewModel and enemy data loading.
 
+---
+
+## BattleView UserControl Added
+
+- Created BattleView.xaml and BattleView.xaml.cs as a new UserControl.
+  - Top TextBlock shows "Battle in Progress".
+  - Center StackPanel with three Buttons: "Attack", "Defend", "Run".
+  - Bottom TextBox (read-only, multi-line) bound to CombatLog.
+  - Comments added for future character/enemy art.
+  - All elements named and bound for later logic.
+- Updated BattleViewModel to implement CombatLog property and commands for Attack, Defend, Run.
+
 This line is kept as requested.
