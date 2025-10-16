@@ -4,8 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MiniRPG"
+        xmlns:vm="clr-namespace:MiniRPG.ViewModels"
+        xmlns:v="clr-namespace:MiniRPG"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:MapViewModel}">
+            <v:MapView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:BattleViewModel}">
+            <v:BattleView />
+        </DataTemplate>
+        <!-- TODO: Add fade transitions between views here -->
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" /> <!-- Top MenuBar -->
@@ -21,10 +32,7 @@
         </Menu>
 
         <!-- Main ContentControl -->
-        <ContentControl Grid.Row="1" Name="MainContentControl">
-            <!-- This will switch between MapView and BattleView -->
-            <!-- Art assets for map or battle backgrounds can be inserted here -->
-        </ContentControl>
+        <ContentControl Grid.Row="1" Name="MainContentControl" Content="{Binding CurrentViewModel}" />
 
         <!-- Bottom TextBox for logs/messages -->
         <TextBox Grid.Row="2" Name="CombatLogTextBox"

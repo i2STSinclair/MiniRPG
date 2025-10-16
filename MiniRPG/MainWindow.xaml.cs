@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MiniRPG.ViewModels;
 
 namespace MiniRPG
 {
@@ -19,6 +20,8 @@ namespace MiniRPG
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewModel(); // Set the main view model
+            // TODO: Add fade transitions between views here
         }
     }
 }

@@ -1,14 +1,22 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Create BattleViewModel.cs in the ViewModels folder.
+Open MainWindow.xaml.cs and update the code-behind.
 
 Requirements:
-• Inherit from BaseViewModel
-• Add ObservableCollection<string> CombatLog
-• Add three RelayCommands: AttackCommand, DefendCommand, RunCommand
-• Each command adds a new line to CombatLog describing what happened (for example: "You attack the enemy for 5 damage!")
-• Add simple randomization for damage values using System.Random
-• Include TODO comments for future HP tracking and enemy AI
+• Set DataContext = new MainViewModel() in the constructor after InitializeComponent().
+• Ensure that MainWindow.xaml’s ContentControl is bound to CurrentViewModel using DataTemplates for MapViewModel and BattleViewModel.
+• Add the DataTemplates in MainWindow.xaml within Window.Resources:
+
+    <DataTemplate DataType="{x:Type vm:MapViewModel}">
+        <v:MapView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:BattleViewModel}">
+        <v:BattleView />
+    </DataTemplate>
+
+• (Assume xmlns:vm="clr-namespace:SimpleRPG.ViewModels" and xmlns:v="clr-namespace:SimpleRPG.Views")
+• Comment clearly where to later add fade transitions between views.
 
 
 ---

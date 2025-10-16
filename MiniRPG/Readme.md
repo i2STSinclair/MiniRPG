@@ -87,4 +87,17 @@
   - Uses System.Random for simple randomization.
   - Includes TODO comments for future HP tracking and enemy AI logic.
 
+---
+
+## MainWindow MVVM Binding and DataTemplates (Fixed Namespaces)
+
+- Set DataContext = new MainViewModel() in MainWindow.xaml.cs constructor.
+- Added DataTemplates for MapViewModel and BattleViewModel in MainWindow.xaml Window.Resources using correct namespaces:
+  - xmlns:vm="clr-namespace:MiniRPG.ViewModels"
+  - xmlns:v="clr-namespace:MiniRPG"
+  - <DataTemplate DataType="{x:Type vm:MapViewModel}"><v:MapView /></DataTemplate>
+  - <DataTemplate DataType="{x:Type vm:BattleViewModel}"><v:BattleView /></DataTemplate>
+- Bound ContentControl to CurrentViewModel for view switching.
+- Added comments for future fade transitions between views.
+
 This line is kept as requested.
