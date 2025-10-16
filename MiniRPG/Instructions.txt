@@ -1,11 +1,16 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Create a new class file named GameService.cs inside the Services folder.
+Edit BattleViewModel.cs to use GameService methods.
 
 Requirements:
-• Add a static method GetRandomEnemy() returning a string name from a small list like "Slime", "Goblin", "Wolf"
-• Add a static method CalculateDamage() returning a random int (e.g. 1–10)
-• Add TODO comments for future expansion: enemy stats, player stats, battle rewards
+• On BattleViewModel initialization, set CurrentEnemy = GameService.GetRandomEnemy()
+• When AttackCommand executes:
+    - int dmg = GameService.CalculateDamage();
+    - Append message $"You hit {CurrentEnemy} for {dmg} damage!"
+• When DefendCommand executes: append message "You brace for the next attack!"
+• When RunCommand executes: append message "You fled from battle!" and optionally disable other commands.
+• Add TODO: // Future - implement enemy turn and HP logic
+
 
 ---
 

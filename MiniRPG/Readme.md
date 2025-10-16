@@ -89,6 +89,17 @@
 
 ---
 
+## BattleViewModel Uses GameService
+
+- BattleViewModel now uses GameService for enemy and damage logic.
+  - Sets CurrentEnemy = GameService.GetRandomEnemy() on initialization.
+  - AttackCommand uses GameService.CalculateDamage() and logs: "You hit {CurrentEnemy} for {dmg} damage!"
+  - DefendCommand logs: "You brace for the next attack!"
+  - RunCommand logs: "You fled from battle!" and disables further actions.
+  - TODO added for future enemy turn and HP logic.
+
+---
+
 ## MainWindow MVVM Binding and DataTemplates (Fixed Namespaces)
 
 - Set DataContext = new MainViewModel() in MainWindow.xaml.cs constructor.
