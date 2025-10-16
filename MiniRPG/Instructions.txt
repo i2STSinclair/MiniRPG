@@ -1,15 +1,17 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Modify MainViewModel.cs.
+Edit MainWindow.xaml.
 
 Requirements:
-• On startup, set CurrentViewModel = new TitleViewModel().
-• Subscribe to TitleSelectionMade event:
-   - If "New": create new Player() and new MapViewModel(CurrentPlayer)
-   - If "Continue": try SaveLoadService.LoadPlayer() → if null, create new Player()
-• Then set CurrentViewModel to MapViewModel.
-• Keep GlobalLog available and append "Welcome back!" or "A new adventure begins!"
-• Add TODO: // Add intro cutscene for new game start
+• Add a DataTemplate for TitleViewModel in Window.Resources:
+
+    <DataTemplate DataType="{x:Type vm:TitleViewModel}">
+        <v:TitleView />
+    </DataTemplate>
+
+• Ensure vm and v namespaces are already declared (vm for ViewModels, v for Views).
+• Confirm ContentControl bound to CurrentViewModel automatically loads this view.
+• Add TODO: <!-- TODO: Add animated fade between title and map -->
 
 ---
 

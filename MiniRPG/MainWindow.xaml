@@ -35,7 +35,11 @@
         <DataTemplate DataType="{x:Type vm:BattleViewModel}">
             <v:BattleView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:TitleViewModel}">
+            <v:TitleView />
+        </DataTemplate>
         <!-- TODO: Add fade transitions between views here -->
+        <!-- TODO: Add animated fade between title and map -->
     </Window.Resources>
     <Grid Background="#222233" Margin="12">
         <Grid.RowDefinitions>

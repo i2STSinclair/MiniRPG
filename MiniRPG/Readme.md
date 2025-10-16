@@ -425,3 +425,10 @@
 - Sets CurrentViewModel to MapViewModel after selection.
 - Keeps GlobalLog persistent.
 - TODO for intro cutscene on new game start.
+
+---
+
+## TitleViewModel DataTemplate & Animated Fade TODO
+
+- Added DataTemplate for TitleViewModel in MainWindow.xaml resources to load TitleView.
+- Added TODO for animated fade between title and map.
