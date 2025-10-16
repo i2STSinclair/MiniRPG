@@ -1,15 +1,11 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Modify MainViewModel.cs to include:
-• ObservableCollection<string> GlobalLog
-• Method AddLog(string message)
-• Whenever switching between MapViewModel and BattleViewModel, pass a reference to GlobalLog so both can append messages.
+Create a new class file named GameService.cs inside the Services folder.
 
-Update MainWindow.xaml:
-• Bind the bottom TextBox to ItemsSource="{Binding GlobalLog}" or use Text="{Binding CombinedLog}" if you prefer a concatenated string.
-• Make it read-only, multi-line, vertical scroll visible.
-• Add comment placeholder for styling later (<!-- TODO: Style log box with pixel-art frame -->)
-
+Requirements:
+• Add a static method GetRandomEnemy() returning a string name from a small list like "Slime", "Goblin", "Wolf"
+• Add a static method CalculateDamage() returning a random int (e.g. 1–10)
+• Add TODO comments for future expansion: enemy stats, player stats, battle rewards
 
 ---
 

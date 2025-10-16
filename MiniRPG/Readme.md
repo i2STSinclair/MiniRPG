@@ -108,4 +108,13 @@
 - MapViewModel and BattleViewModel receive GlobalLog reference and append messages to it.
 - MainWindow.xaml bottom log is now a ListBox bound to GlobalLog, read-only, multi-line, with a comment for future pixel-art styling.
 
+---
+
+## GameService Utility Class Added
+
+- Created GameService.cs in Services folder.
+  - Static method GetRandomEnemy() returns a random enemy name from a list ("Slime", "Goblin", "Wolf").
+  - Static method CalculateDamage() returns a random int (1–10).
+  - TODO comments for future expansion: enemy stats, player stats, battle rewards.
+
 This line is kept as requested.
