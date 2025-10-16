@@ -60,9 +60,9 @@
                 </StackPanel>
             </StackPanel>
             <!-- TODO: Insert Player/Enemy portraits here -->
-            <Button Name="AttackButton" Content="Attack" Command="{Binding AttackCommand}" Width="120" Margin="5" Padding="8,4" />
-            <Button Name="DefendButton" Content="Defend" Command="{Binding DefendCommand}" Width="120" Margin="5" Padding="8,4" />
-            <Button Name="RunButton" Content="Run" Command="{Binding RunCommand}" Width="120" Margin="5" Padding="8,4" />
+            <Button Name="AttackButton" Content="Attack" Command="{Binding AttackCommand}" Width="120" Margin="5" Padding="8,4" Foreground="White" Background="#444466" />
+            <Button Name="DefendButton" Content="Defend" Command="{Binding DefendCommand}" Width="120" Margin="5" Padding="8,4" Foreground="White" Background="#444466" />
+            <Button Name="RunButton" Content="Run" Command="{Binding RunCommand}" Width="120" Margin="5" Padding="8,4" Foreground="White" Background="#444466" />
         </StackPanel>
 
         <!-- Bottom: Combat log with Border -->

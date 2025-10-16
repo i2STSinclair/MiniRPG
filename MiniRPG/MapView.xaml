@@ -13,10 +13,10 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Content="Choose a Battle Location" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,10" />
+        <Label Grid.Row="0" Content="Choose a Battle Location" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White" />
 
         <ListBox Grid.Row="1" Name="LocationList" ItemsSource="{Binding Locations}" Margin="0,0,0,10" />
 
-        <Button Grid.Row="2" Content="Fight!" Command="{Binding StartBattleCommand}" HorizontalAlignment="Right" Width="100" />
+        <Button Grid.Row="2" Content="Fight!" Command="{Binding StartBattleCommand}" HorizontalAlignment="Right" Width="100" Foreground="White" Background="#444466" />
     </Grid>
 </UserControl>
