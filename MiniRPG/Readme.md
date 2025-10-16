@@ -40,4 +40,15 @@
   - Implements CanExecuteChanged, CanExecute, and Execute with proper null checking.
   - Added comments for future parameter expansion and context support.
 
+---
+
+## MapView UserControl Added
+
+- Created MapView.xaml and MapView.xaml.cs as a new UserControl.
+  - Displays a label "Choose a Battle Location".
+  - ListBox named LocationList bound to Locations collection in MapViewModel.
+  - "Fight!" button bound to StartBattleCommand.
+  - Uses Grid layout and includes comment for future background map art.
+- Updated MapViewModel to implement Locations collection and StartBattleCommand for binding.
+
 This line is kept as requested.
