@@ -1,15 +1,16 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Testing checklist:
-1. Run the game, level up, rest, and click "Save Game".
-2. Close the application.
-3. Reopen it — verify player stats and level are loaded correctly.
-4. Fight another battle to confirm autosave works.
-5. Observe "Game Saved!" message.
-6. Add TODO placeholders:
-   <!-- TODO: Encrypt save file -->
-   <!-- TODO: Add multiple save slots -->
-   <!-- TODO: Add "Continue" option on main menu -->
+Create TitleViewModel.cs in the ViewModels folder.
+
+Requirements:
+• Inherit from BaseViewModel.
+• Add two RelayCommands:
+   - NewGameCommand
+   - ContinueCommand
+• Add event Action<string> TitleSelectionMade;
+• When NewGameCommand executes, call TitleSelectionMade?.Invoke("New");
+• When ContinueCommand executes, call TitleSelectionMade?.Invoke("Continue");
+• Add TODO: // Later - add fade transition and intro dialogue
 
 ---
 

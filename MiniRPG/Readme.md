@@ -403,3 +403,13 @@
 - XAML layout: large centered title text ("Simple RPG") and two large buttons ("New Game" and "Continue") bound to NewGameCommand and ContinueCommand.
 - All elements centered in a Grid.
 - Added TODO comments for logo art, background music, intro scene, and button animation.
+
+---
+
+## TitleViewModel Added
+
+- Created TitleViewModel.cs in ViewModels folder.
+- Inherits from BaseViewModel.
+- Adds NewGameCommand and ContinueCommand (RelayCommand).
+- Adds event TitleSelectionMade, invoked on command execution.
+- TODO for fade transition and intro dialogue.
