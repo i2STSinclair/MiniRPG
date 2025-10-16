@@ -1,11 +1,15 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Modify UseItemCommand in MapViewModel.cs.
-
-After successfully using an item:
-• Call SaveLoadService.SavePlayer(Player)
-• Optionally set IsSaveConfirmed = true to show save confirmation.
-• Add TODO: // Add autosave toggle option later
+Testing checklist:
+1. Defeat enemies to collect random loot.
+2. Verify inventory updates in MapView.
+3. Close and reopen app — ensure items persist.
+4. Use potion items to heal and confirm they disappear after use.
+5. Check save confirmation message appears.
+6. Add TODO placeholders:
+   <!-- TODO: Add equipment and stat bonuses -->
+   <!-- TODO: Add item shop -->
+   <!-- TODO: Add crafting and material combination -->
 
 ---
 

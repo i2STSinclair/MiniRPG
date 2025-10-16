@@ -550,3 +550,18 @@
   - Sets IsSaveConfirmed = true to show save confirmation message.
   - Awaits HideSaveConfirmation to reset confirmation after delay.
   - Added TODO for future autosave toggle option.
+
+---
+
+## Testing Checklist & TODO Placeholders Added
+
+- Testing checklist for inventory, loot, persistence, item use, and save confirmation:
+  1. Defeat enemies to collect random loot.
+  2. Verify inventory updates in MapView.
+  3. Close and reopen app — ensure items persist.
+  4. Use potion items to heal and confirm they disappear after use.
+  5. Check save confirmation message appears.
+- Added TODO placeholders:
+  - <!-- TODO: Add equipment and stat bonuses -->
+  - <!-- TODO: Add item shop -->
+  - <!-- TODO: Add crafting and material combination -->

@@ -12,6 +12,9 @@
     <!-- TODO: Replace text with pixel-art status window -->
     <!-- TODO: Add animated portrait or player sprite here -->
     <!-- TODO: Insert background map image here -->
+    <!-- TODO: Add equipment and stat bonuses -->
+    <!-- TODO: Add item shop -->
+    <!-- TODO: Add crafting and material combination -->
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
