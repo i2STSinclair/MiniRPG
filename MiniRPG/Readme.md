@@ -540,3 +540,13 @@
 - Button's Command is bound to UseItemCommand.
 - CommandParameter is bound to the SelectedItem of the Inventory ListBox.
 - Added TODO comment for future contextual radial menu or drag/drop inventory UI.
+
+---
+
+## MapViewModel: UseItemCommand Autosave Added
+
+- Modified UseItemCommand in MapViewModel.cs:
+  - After successfully using an item, calls SaveLoadService.SavePlayer(Player).
+  - Sets IsSaveConfirmed = true to show save confirmation message.
+  - Awaits HideSaveConfirmation to reset confirmation after delay.
+  - Added TODO for future autosave toggle option.

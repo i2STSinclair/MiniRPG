@@ -1,13 +1,11 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Update MapView.xaml.
+Modify UseItemCommand in MapViewModel.cs.
 
-Requirements:
-• Under Inventory list, add a Button labeled "Use Item".
-• Bind its Command to UseItemCommand.
-• Bind CommandParameter to SelectedItem of the ListBox.
-• Add TODO:
-   <!-- TODO: Replace with contextual radial menu or drag/drop inventory UI -->
+After successfully using an item:
+• Call SaveLoadService.SavePlayer(Player)
+• Optionally set IsSaveConfirmed = true to show save confirmation.
+• Add TODO: // Add autosave toggle option later
 
 ---
 

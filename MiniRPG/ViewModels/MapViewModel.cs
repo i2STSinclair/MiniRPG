@@ -102,7 +102,7 @@ namespace MiniRPG.ViewModels
             // Later - use animation system for this message
         }
 
-        private void UseItem(Item? item)
+        private async void UseItem(Item? item)
         {
             if (item == null)
             {
@@ -116,6 +116,10 @@ namespace MiniRPG.ViewModels
                 Player.Inventory.Remove(item);
                 OnPropertyChanged(nameof(Player));
                 _globalLog.Add("You used a Potion and recovered 10 HP.");
+                SaveLoadService.SavePlayer(Player);
+                IsSaveConfirmed = true;
+                await HideSaveConfirmation();
+                // TODO: // Add autosave toggle option later
             }
             else
             {
