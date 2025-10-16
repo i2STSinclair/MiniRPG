@@ -50,6 +50,7 @@ namespace MiniRPG.ViewModels
         public ICommand AttackCommand { get; }
         public ICommand DefendCommand { get; }
         public ICommand RunCommand { get; }
+        public ICommand ReturnToMapCommand { get; }
 
         // Later: Replace integers with full Stat objects for scaling difficulty
         // TODO: Later - persist Player object between battles
@@ -68,6 +69,7 @@ namespace MiniRPG.ViewModels
             AttackCommand = new RelayCommand(_ => Attack(), _ => _canAct && !IsBattleOver);
             DefendCommand = new RelayCommand(_ => Defend(), _ => _canAct && !IsBattleOver);
             RunCommand = new RelayCommand(_ => Run(), _ => _canAct && !IsBattleOver);
+            ReturnToMapCommand = new RelayCommand(_ => OnReturnToMap(), _ => IsBattleOver);
         }
 
         private void Attack()
@@ -136,6 +138,12 @@ namespace MiniRPG.ViewModels
                 UpdateCommands();
                 BattleEnded?.Invoke("Defeat");
             }
+        }
+
+        private void OnReturnToMap()
+        {
+            BattleEnded?.Invoke("Return");
+            // TODO: Replace with animated return transition to Map screen
         }
 
         private void UpdateCommands()

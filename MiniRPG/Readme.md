@@ -210,4 +210,12 @@
 - Overlay uses large bold font and color (LimeGreen for victory, Red for defeat) via ResultToColorConverter.
 - Added TODO comments for future animated transitions and art-based victory screens.
 
+---
+
+## BattleView: Return to Map Button
+
+- Added 'Return to Map' button to BattleView overlay, bound to ReturnToMapCommand in BattleViewModel.
+- Button is visible when IsBattleOver is true and calls BattleEnded?.Invoke("Return") when clicked.
+- Added TODO for animated return transition to Map screen.
+
 This line is kept as requested.

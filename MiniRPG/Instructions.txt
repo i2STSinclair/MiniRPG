@@ -1,15 +1,14 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Open BattleView.xaml and add a basic overlay.
+Edit BattleView.xaml.
 
 Requirements:
-• Add a TextBlock centered over the UI (use a Grid with overlapping layers)
-• Bind its Text to a new BattleResult property in BattleViewModel
-• Use large bold font and color (e.g., LimeGreen for victory, Red for defeat)
-• Visibility bound to IsBattleOver (use BooleanToVisibilityConverter)
-• Add comments:
-   <!-- TODO: Replace overlay with animated fade-in/out scene transition -->
-   <!-- TODO: Replace static text with art-based "Victory" screen later -->
+• Add a Button labeled "Return to Map"
+• Bind it to a new RelayCommand named ReturnToMapCommand in BattleViewModel
+• Set Button Visibility bound to IsBattleOver
+• When clicked, call BattleEnded?.Invoke("Return")
+• Add TODO: // Replace with animated return transition to Map screen
+
 
 ---
 

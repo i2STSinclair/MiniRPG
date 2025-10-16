@@ -33,6 +33,13 @@
                        Foreground="{Binding BattleResult, Converter={StaticResource ResultToColor}}"
                        TextAlignment="Center"
                        Panel.ZIndex="99" />
+            <Button Content="Return to Map"
+                    Command="{Binding ReturnToMapCommand}"
+                    Visibility="{Binding IsBattleOver, Converter={StaticResource BoolToVis}}"
+                    HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                    Margin="5" Padding="8,4" Width="180">
+                <!-- TODO: Replace with animated return transition to Map screen -->
+            </Button>
         </Grid>
 
         <!-- Top: Battle status -->
