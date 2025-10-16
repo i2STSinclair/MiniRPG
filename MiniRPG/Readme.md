@@ -128,4 +128,14 @@
   - Static method CalculateDamage() returns a random int (1–10).
   - TODO comments for future expansion: enemy stats, player stats, battle rewards.
 
+---
+
+## MainWindow TODO Placeholders Added
+
+- Added TODO comment placeholders at the top of MainWindow.xaml for:
+  - Background music
+  - Player sprite
+  - Enemy sprite
+  - Location art
+
 This line is kept as requested.

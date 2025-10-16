@@ -1,15 +1,15 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Edit BattleViewModel.cs to use GameService methods.
-
-Requirements:
-• On BattleViewModel initialization, set CurrentEnemy = GameService.GetRandomEnemy()
-• When AttackCommand executes:
-    - int dmg = GameService.CalculateDamage();
-    - Append message $"You hit {CurrentEnemy} for {dmg} damage!"
-• When DefendCommand executes: append message "You brace for the next attack!"
-• When RunCommand executes: append message "You fled from battle!" and optionally disable other commands.
-• Add TODO: // Future - implement enemy turn and HP logic
+Instructions:
+1. Build and run the SimpleRPG project.
+2. Verify:
+   • "Map" and "Battle" buttons switch views.
+   • MapView lists locations.
+   • Selecting a location + “Fight!” logs a start message.
+   • BattleView’s buttons append combat messages.
+3. If you encounter errors, let Copilot fix binding or namespace issues automatically.
+4. Add TODO comment placeholders at top of MainWindow.xaml:
+   <!-- TODO: Add background music, player sprite, enemy sprite, and location art -->
 
 
 ---
