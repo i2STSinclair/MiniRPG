@@ -81,11 +81,13 @@ namespace MiniRPG.ViewModels
             // TODO: In future, connect to BattleViewModel and load enemy data
         }
 
-        private void Rest()
+        private async void Rest()
         {
             Player.HP = Player.MaxHP;
             OnPropertyChanged(nameof(Player));
             _globalLog?.Add("You rest and recover all HP.");
+            IsSaveConfirmed = true;
+            await HideSaveConfirmation();
             // TODO: Replace with inn scene and cost-based healing later
         }
 
@@ -93,9 +95,15 @@ namespace MiniRPG.ViewModels
         {
             SaveLoadService.SavePlayer(Player);
             IsSaveConfirmed = true;
+            await HideSaveConfirmation();
+            // TODO: Replace with pixel-art popup animation for future version
+        }
+
+        private async Task HideSaveConfirmation()
+        {
             await Task.Delay(2000);
             IsSaveConfirmed = false;
-            // TODO: Replace with pixel-art popup animation for future version
+            // Later - use animation system for this message
         }
     }
 }

@@ -377,3 +377,11 @@
 - SaveCommand sets IsSaveConfirmed true, hides after 2 seconds.
 - MapView.xaml displays 'Game Saved!' message below Save button, bound to IsSaveConfirmed.
 - Added TODO for pixel-art popup animation.
+
+---
+
+## MapViewModel Save Confirmation Animation Logic
+
+- IsSaveConfirmed property now set in Rest and Save actions.
+- Added async HideSaveConfirmation() method to hide message after 2 seconds.
+- TODO for future animation system for save confirmation message.

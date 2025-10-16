@@ -1,13 +1,15 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Enhance MapView.xaml.
+Modify MapViewModel.cs.
 
 Requirements:
-• Add TextBlock below Save button displaying "Game Saved!" message.
-• Bind its Visibility to a bool IsSaveConfirmed in MapViewModel.
-• Set IsSaveConfirmed = true when SaveCommand executes.
-• Automatically hide after a few seconds (async Task.Delay(2000)).
-• Add TODO: // Replace with pixel-art popup animation for future version
+• Add property bool IsSaveConfirmed with OnPropertyChanged.
+• In RestCommand or when Save is invoked, set IsSaveConfirmed = true.
+• Create async method HideSaveConfirmation():
+   - await Task.Delay(2000);
+   - IsSaveConfirmed = false;
+• Call HideSaveConfirmation() after setting confirmation.
+• Add TODO: // Later - use animation system for this message
 
 ---
 
