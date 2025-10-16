@@ -565,3 +565,17 @@
   - <!-- TODO: Add equipment and stat bonuses -->
   - <!-- TODO: Add item shop -->
   - <!-- TODO: Add crafting and material combination -->
+
+---
+
+## UI Readability Improvements
+
+- Updated TitleView.xaml:
+  - New Game and Continue buttons now use dark text (#222233) on a gold background (#F9E97A) for high contrast.
+- Updated MapView.xaml:
+  - All buttons and important labels use gold text (#F9E97A) on dark backgrounds (#222233).
+- Updated BattleView.xaml:
+  - All action buttons and status text use gold text (#F9E97A) on dark backgrounds (#222233).
+- Updated MainWindow.xaml:
+  - Global button style now uses gold text (#F9E97A) on dark backgrounds (#222233) and bold font for visibility.
+- Ensured all UI elements have sufficient contrast for readability.

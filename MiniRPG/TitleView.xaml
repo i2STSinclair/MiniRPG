@@ -21,11 +21,11 @@
         <TextBlock Grid.Row="1" Text="Simple RPG" FontSize="48" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,32" />
         <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
             <Button Content="New Game" Command="{Binding NewGameCommand}" Width="220" Height="56" FontSize="22" Margin="0,0,0,16"
-                    ToolTip="Enter: New Game">
+                    ToolTip="Enter: New Game" Foreground="#222233" Background="#F9E97A" FontWeight="Bold">
                 <!-- TODO: Animate buttons on hover -->
             </Button>
             <Button Content="Continue" Command="{Binding ContinueCommand}" Width="220" Height="56" FontSize="22"
-                    ToolTip="C: Continue">
+                    ToolTip="C: Continue" Foreground="#222233" Background="#F9E97A" FontWeight="Bold">
                 <!-- TODO: Animate buttons on hover -->
             </Button>
         </StackPanel>
