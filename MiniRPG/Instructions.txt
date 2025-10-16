@@ -1,15 +1,14 @@
 ﻿You are GitHub Copilot inside Visual Studio 2022.
 
-Edit BattleViewModel.cs.
+Update MainViewModel.cs.
 
 Requirements:
-• When the player defeats an enemy (EnemyHP <= 0):
-   - int exp = new Random().Next(5, 15);
-   - bool leveledUp = Player.GainExperience(exp);
-   - Append $"You gained {exp} experience!"
-   - If leveledUp, append $"You reached level {Player.Level}! Your stats increased."
-• Call BattleEnded?.Invoke("Victory") afterward.
-• Add TODO: // Later - include loot drops and enemy-specific EXP scaling
+• Add a public property: Player CurrentPlayer { get; set; } = new Player();
+• When creating BattleViewModel, pass the same Player instance:
+   var battleVM = new BattleViewModel(CurrentPlayer);
+• In BattleViewModel, modify constructor to accept a Player parameter and assign it.
+• Ensure Player HP and stats carry over between battles.
+• Add TODO: // Later - add save/load player data to file system
 
 ---
 

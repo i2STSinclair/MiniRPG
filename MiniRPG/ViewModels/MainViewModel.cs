@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 using System.Threading.Tasks;
+using MiniRPG.Models;
 
 namespace MiniRPG.ViewModels
 {
@@ -27,6 +28,8 @@ namespace MiniRPG.ViewModels
 
         public ObservableCollection<string> GlobalLog { get; } = new();
 
+        public Player CurrentPlayer { get; set; } = new Player();
+
         public ICommand ShowMapCommand { get; }
         public ICommand ShowBattleCommand { get; }
 
@@ -51,7 +54,7 @@ namespace MiniRPG.ViewModels
             var mapVM = new MapViewModel(GlobalLog);
             mapVM.OnStartBattle += async location =>
             {
-                var battleVM = new BattleViewModel(GlobalLog);
+                var battleVM = new BattleViewModel(GlobalLog, CurrentPlayer);
                 // Optionally pass location to BattleViewModel here
                 battleVM.BattleEnded += async result =>
                 {
@@ -71,7 +74,7 @@ namespace MiniRPG.ViewModels
 
         private void ShowBattle()
         {
-            var battleVM = new BattleViewModel(GlobalLog);
+            var battleVM = new BattleViewModel(GlobalLog, CurrentPlayer);
             battleVM.BattleEnded += async result =>
             {
                 AddLog($"Battle ended with result: {result}");
@@ -83,5 +86,6 @@ namespace MiniRPG.ViewModels
             AddLog("Switched to BattleView");
             // Future: Insert transition/animation logic here for BattleView
         }
+        // TODO: Later - add save/load player data to file system
     }
 }

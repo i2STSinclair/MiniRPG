@@ -58,10 +58,10 @@ namespace MiniRPG.ViewModels
         // Event for battle end
         public event Action<string>? BattleEnded;
 
-        public BattleViewModel(ObservableCollection<string> globalLog)
+        public BattleViewModel(ObservableCollection<string> globalLog, Player player)
         {
             _globalLog = globalLog;
-            Player = new Player();
+            Player = player;
             CurrentEnemy = GameService.GetRandomEnemy();
             EnemyHP = 20;
             IsBattleOver = false;

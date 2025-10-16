@@ -272,3 +272,12 @@
   - If leveled up, logs new level and stat increase.
   - Calls BattleEnded?.Invoke("Victory") after.
   - TODO for loot drops and enemy-specific EXP scaling.
+
+---
+
+## Player Persistence in MainViewModel & BattleViewModel
+
+- MainViewModel now has a public property: Player CurrentPlayer { get; set; } = new Player();
+- When creating BattleViewModel, passes the same Player instance for persistent stats and HP.
+- BattleViewModel constructor updated to accept and assign Player.
+- TODO added for save/load player data to file system.
